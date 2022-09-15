@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  /// @Field(() => ID)
+  id              Int      @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
+  userName        String
+  /// @Validator.IsNotEmpty()
+  discordId       String
+  /// @Validator.IsNotEmpty()
+  discordAvatarId String
+  /// @HideField({ input: true, output: true })
+  createdAt       DateTime @default(now())
+  licenseKey      String   @unique @db.VarChar(64)
+  license         License  @relation(fields: [licenseKey], references: [licenseKey], onDelete: Cascade)
+}
+
+model License {
+  /// @Field(() => ID)
+  id             Int       @id @default(autoincrement())
+  /// @Validator.IsNotEmpty()
+  role           Role
+  /// @Validator.Length(min: 64, max: 64 )
+  licenseKey     String    @unique @db.VarChar(64)
+  /// @HideField({ input: true, output: true })
+  createdAt      DateTime  @default(now())
+  /// @Validator.IsDate()
+  expirationDate DateTime?
+  isActivated    Boolean   @default(false)
+  user           User?
+}
+
+model Admin {
+  /// @Field(() => ID)
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  /// @HideField()
+  password String
+}
+
+enum Role {
+  LIFETIME
+  RENEWAL
+  FAMILYANDFRIENDS
+}
+
+generator nestgraphql {
+  provider               = "node node_modules/prisma-nestjs-graphql"
+  output                 = "../src/@generated/prisma-nestjs-graphql"
+  fields_Validator_from  = "class-validator"
+  fields_Validator_input = true
+  decorate_1_type        = "CreateOne*Args"
+  decorate_1_field       = data
+  decorate_1_name        = ValidateNested
+  decorate_1_from        = "class-validator"
+  decorate_1_arguments   = "[]"
+  decorate_2_type        = "CreateMany*Args"
+  decorate_2_field       = data
+  decorate_2_name        = ValidateNested
+  decorate_2_from        = "class-validator"
+  decorate_2_arguments   = "[]"
+  decorate_3_type        = "UpdateOne*Args"
+  decorate_3_field       = data
+  decorate_3_name        = ValidateNested
+  decorate_3_from        = "class-validator"
+  decorate_3_arguments   = "[]"
+  decorate_4_type        = "UpdateMany*Args"
+  decorate_4_field       = data
+  decorate_4_name        = ValidateNested
+  decorate_4_from        = "class-validator"
+  decorate_4_arguments   = "[]"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "discord-license-manager",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "lint": "yarn backend:lint && yarn frontend:lint",
+    "backend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./backend/src",
+    "frontend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./frontend/src",
+    "fmt": "prettier --write ./frontend/src ./backend/src"
+  },
+  "lint-staged": {
+    "./{backend,frontend}/**/*.{js,jsx,ts,tsx}": [
+      "lint",
+      "fmt"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.2"
+  }
+}
