@@ -2,21 +2,21 @@
 
 exports[`Storyshots  InputField Default 1`] = `
 <input
-  className="sc-dkzDqf TAkWB"
+  className="sc-bczRLJ fAQBvE"
   placeholder="Type here"
 />
 `;
 
 exports[`Storyshots  InputField Error 1`] = `
 <input
-  className="sc-dkzDqf TAkWB is-invalid"
+  className="sc-bczRLJ fAQBvE is-invalid"
   placeholder="Type here"
 />
 `;
 
 exports[`Storyshots Elements/Button Default 1`] = `
 <button
-  className="sc-bczRLJ imPCrX"
+  className="sc-gsnTZi cFnfUp"
 >
   Default Button
 </button>
@@ -24,7 +24,7 @@ exports[`Storyshots Elements/Button Default 1`] = `
 
 exports[`Storyshots Elements/Button Primary 1`] = `
 <button
-  className="sc-bczRLJ sc-gsnTZi imPCrX gKSuZQ"
+  className="sc-gsnTZi sc-dkzDqf cFnfUp cGQMqD"
 >
   Primary Button
 </button>
