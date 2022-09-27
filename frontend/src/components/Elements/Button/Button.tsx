@@ -19,14 +19,15 @@ export interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   variants = 'default',
+  children,
   ...props
 }) => {
   return (
     <>
       {variants === 'primary' ? (
-        <StyledPrimaryButton {...props}>{props.children}</StyledPrimaryButton>
+        <StyledPrimaryButton {...props}>{children}</StyledPrimaryButton>
       ) : (
-        <StyledButton {...props}>{props.children}</StyledButton>
+        <StyledButton {...props}>{children}</StyledButton>
       )}
     </>
   );
