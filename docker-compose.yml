@@ -10,7 +10,7 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./mysql/conf:/etc/mysql/conf.d/:ro
+      - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf:ro
       - mysqldata:/var/lib/mysql
 
 volumes:
