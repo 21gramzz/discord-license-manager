@@ -2,17 +2,17 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../Icon';
 
-export interface DropdownOption {
+export interface SelectFieldOption {
   label: string;
   value: string;
 }
 
 interface Props {
-  options: DropdownOption[];
+  options: SelectFieldOption[];
   isMulti?: boolean;
   className?: string;
   onChange: (value?: string[]) => void;
-  defaultValue?: DropdownOption[];
+  defaultValue?: SelectFieldOption[];
   fontSize?: string;
   fontWeight?: string;
   color?: string;
@@ -37,10 +37,10 @@ export const SelectField: React.FC<Props> = ({
   options,
 }) => {
   const [selectedOptions, setSelectedOptions] =
-    useState<DropdownOption[]>(defaultValue);
+    useState<SelectFieldOption[]>(defaultValue);
   const [isDropdownShown, setDropdownShown] = useState<boolean>(false);
   const [dropdownOptions, setDropdownOptions] =
-    useState<DropdownOption[]>(options);
+    useState<SelectFieldOption[]>(options);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [selectFieldHeight, setSelectFieldHeight] = useState('auto');
 
@@ -79,7 +79,7 @@ export const SelectField: React.FC<Props> = ({
   );
 
   const handleDeleteSelectedValue = useCallback(
-    (option: DropdownOption) => {
+    (option: SelectFieldOption) => {
       setSelectedOptions(
         selectedOptions.filter((v) => v.value !== option.value),
       );

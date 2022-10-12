@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "private": true,
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
+  "workspaces": {
+    "packages": [
+      "backend",
+      "frontend"
+    ],
+    "nohoist": [
+      "**/@nestjs",
+      "**/@nestjs/**"
+    ]
+  },
   "scripts": {
     "lint": "yarn backend:lint && yarn frontend:lint",
     "backend:lint": "eslint --fix --ext .jsx,.js,.tsx,.ts ./backend/src",
