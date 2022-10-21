@@ -13,15 +13,13 @@ datasource db {
 model User {
   /// @Field(() => ID)
   id              Int      @id @default(autoincrement())
-  /// @Validator.IsNotEmpty()
   userName        String
-  /// @Validator.IsNotEmpty()
   discordId       String
-  /// @Validator.IsNotEmpty()
   discordAvatarId String
   /// @HideField({ input: true, output: true })
   createdAt       DateTime @default(now())
-  licenseKey      String   @unique @db.VarChar(64)
+  /// @HideField({ input: true, output: true })
+  licenseKey      String   @unique
   license         License  @relation(fields: [licenseKey], references: [licenseKey], onDelete: Cascade)
 }
 
@@ -30,12 +28,14 @@ model License {
   id             Int       @id @default(autoincrement())
   /// @Validator.IsNotEmpty()
   role           Role
-  /// @Validator.Length(64, 64)
-  licenseKey     String    @unique @db.VarChar(64)
+  /// @HideField({ input: true, output: true })
+  licenseKey     String    @unique
   /// @HideField({ input: true, output: true })
   createdAt      DateTime  @default(now())
+  /// @HideField({ input: true, output: false })
   /// @Validator.IsDate()
   expirationDate DateTime?
+  /// @HideField({ input: true, output: false })
   isActivated    Boolean   @default(false)
   user           User?
 }
@@ -43,6 +43,7 @@ model License {
 model Admin {
   /// @Field(() => ID)
   id       Int    @id @default(autoincrement())
+  /// @Validator.IsEmail()
   email    String @unique
   /// @HideField()
   password String
