@@ -21,7 +21,7 @@ export class UserOrderByWithRelationInput {
   @HideField()
   createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @HideField()
   licenseKey?: keyof typeof SortOrder;
 
   @Field(() => LicenseOrderByWithRelationInput, { nullable: true })

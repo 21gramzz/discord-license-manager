@@ -14,17 +14,15 @@ export class LicenseCreateManyInput {
   @Validator.IsNotEmpty()
   role!: keyof typeof Role;
 
-  @Field(() => String, { nullable: false })
-  @Validator.Length(64, 64)
+  @HideField()
   licenseKey!: string;
 
   @HideField()
   createdAt?: Date | string;
 
-  @Field(() => Date, { nullable: true })
-  @Validator.IsDate()
+  @HideField()
   expirationDate?: Date | string;
 
-  @Field(() => Boolean, { nullable: true })
+  @HideField()
   isActivated?: boolean;
 }

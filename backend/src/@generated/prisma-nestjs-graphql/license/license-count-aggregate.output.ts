@@ -11,7 +11,7 @@ export class LicenseCountAggregate {
   @Field(() => Int, { nullable: false })
   role!: number;
 
-  @Field(() => Int, { nullable: false })
+  @HideField()
   licenseKey!: number;
 
   @HideField()

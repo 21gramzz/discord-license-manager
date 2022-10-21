@@ -25,7 +25,7 @@ export class UserOrderByWithAggregationInput {
   @HideField()
   createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @HideField()
   licenseKey?: keyof typeof SortOrder;
 
   @Field(() => UserCountOrderByAggregateInput, { nullable: true })

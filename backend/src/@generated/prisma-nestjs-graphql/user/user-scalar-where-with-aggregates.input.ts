@@ -31,6 +31,6 @@ export class UserScalarWhereWithAggregatesInput {
   @HideField()
   createdAt?: DateTimeWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  @HideField()
   licenseKey?: StringWithAggregatesFilter;
 }

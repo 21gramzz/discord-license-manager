@@ -5,7 +5,6 @@
 type License {
   id: ID!
   role: Role!
-  licenseKey: String!
   expirationDate: DateTime
   isActivated: Boolean!
   user: User
@@ -27,15 +26,172 @@ type User {
   userName: String!
   discordId: String!
   discordAvatarId: String!
-  licenseKey: String!
   license: License!
 }
 
+type AffectedRows {
+  count: Int!
+}
+
 type Query {
-  findUniqueUser(where: UserWhereUniqueInput!): User!
+  user(where: UserWhereUniqueInput!): User!
+  licenses(where: LicenseWhereInput, orderBy: [LicenseOrderByWithRelationInput!], cursor: LicenseWhereUniqueInput, take: Int, skip: Int, distinct: [LicenseScalarFieldEnum!]): [License!]!
+  totalLicenses: Float!
 }
 
 input UserWhereUniqueInput {
   id: Int
-  licenseKey: String
+}
+
+input LicenseWhereInput {
+  AND: [LicenseWhereInput!]
+  OR: [LicenseWhereInput!]
+  NOT: [LicenseWhereInput!]
+  id: IntFilter
+  role: EnumRoleFilter
+  user: UserRelationFilter
+}
+
+input IntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input NestedIntFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: NestedIntFilter
+}
+
+input EnumRoleFilter {
+  equals: Role
+  in: [Role!]
+  notIn: [Role!]
+  not: NestedEnumRoleFilter
+}
+
+input NestedEnumRoleFilter {
+  equals: Role
+  in: [Role!]
+  notIn: [Role!]
+  not: NestedEnumRoleFilter
+}
+
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  id: IntFilter
+  userName: StringFilter
+  discordId: StringFilter
+  discordAvatarId: StringFilter
+  license: LicenseRelationFilter
+}
+
+input StringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input NestedStringFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  not: NestedStringFilter
+}
+
+input LicenseRelationFilter {
+  is: LicenseWhereInput
+  isNot: LicenseWhereInput
+}
+
+input LicenseOrderByWithRelationInput {
+  id: SortOrder
+  role: SortOrder
+  user: UserOrderByWithRelationInput
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+input UserOrderByWithRelationInput {
+  id: SortOrder
+  userName: SortOrder
+  discordId: SortOrder
+  discordAvatarId: SortOrder
+  license: LicenseOrderByWithRelationInput
+}
+
+input LicenseWhereUniqueInput {
+  id: Int
+}
+
+enum LicenseScalarFieldEnum {
+  id
+  role
+  licenseKey
+  createdAt
+  expirationDate
+  isActivated
+}
+
+type Mutation {
+  deleteManyLicense(where: LicenseWhereInput): AffectedRows!
+  createLicense(data: LicenseCreateInput!): License!
+}
+
+input LicenseCreateInput {
+  role: Role!
+  user: UserCreateNestedOneWithoutLicenseInput
+}
+
+input UserCreateNestedOneWithoutLicenseInput {
+  create: UserCreateWithoutLicenseInput
+  connectOrCreate: UserCreateOrConnectWithoutLicenseInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutLicenseInput {
+  userName: String!
+  discordId: String!
+  discordAvatarId: String!
+}
+
+input UserCreateOrConnectWithoutLicenseInput {
+  where: UserWhereUniqueInput!
+  create: UserCreateWithoutLicenseInput!
 }

@@ -32,7 +32,7 @@ export class UserWhereInput {
   @HideField()
   createdAt?: DateTimeFilter;
 
-  @Field(() => StringFilter, { nullable: true })
+  @HideField()
   licenseKey?: StringFilter;
 
   @Field(() => LicenseRelationFilter, { nullable: true })

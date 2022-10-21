@@ -20,6 +20,6 @@ export class UserMinAggregate {
   @HideField()
   createdAt?: Date | string;
 
-  @Field(() => String, { nullable: true })
+  @HideField()
   licenseKey?: string;
 }

@@ -17,7 +17,7 @@ export class LicenseGroupBy {
   @Field(() => Role, { nullable: false })
   role!: keyof typeof Role;
 
-  @Field(() => String, { nullable: false })
+  @HideField()
   licenseKey!: string;
 
   @HideField()

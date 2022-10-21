@@ -12,7 +12,7 @@ export class LicenseMinAggregate {
   @Field(() => Role, { nullable: true })
   role?: keyof typeof Role;
 
-  @Field(() => String, { nullable: true })
+  @HideField()
   licenseKey?: string;
 
   @HideField()

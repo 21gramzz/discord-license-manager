@@ -16,16 +16,16 @@ export class LicenseOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
   role?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @HideField()
   licenseKey?: keyof typeof SortOrder;
 
   @HideField()
   createdAt?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @HideField()
   expirationDate?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @HideField()
   isActivated?: keyof typeof SortOrder;
 
   @Field(() => LicenseCountOrderByAggregateInput, { nullable: true })

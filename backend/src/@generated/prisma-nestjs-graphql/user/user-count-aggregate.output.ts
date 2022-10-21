@@ -20,7 +20,7 @@ export class UserCountAggregate {
   @HideField()
   createdAt!: number;
 
-  @Field(() => Int, { nullable: false })
+  @HideField()
   licenseKey!: number;
 
   @Field(() => Int, { nullable: false })

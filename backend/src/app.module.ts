@@ -6,6 +6,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { PrismaService } from './prisma.service';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
+import { LicensesModule } from './licenses/licenses.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { UsersModule } from './users/users.module';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     UsersModule,
+    LicensesModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],

@@ -21,7 +21,7 @@ export class User {
   @HideField()
   createdAt!: Date;
 
-  @Field(() => String, { nullable: false })
+  @HideField()
   licenseKey!: string;
 
   @Field(() => License, { nullable: false })
