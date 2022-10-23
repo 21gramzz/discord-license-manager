@@ -18,8 +18,7 @@ model User {
   discordAvatarId String
   /// @HideField({ input: true, output: true })
   createdAt       DateTime @default(now())
-  /// @HideField({ input: true, output: true })
-  licenseKey      String   @unique
+  licenseKey      String   @unique @db.VarChar(64)
   license         License  @relation(fields: [licenseKey], references: [licenseKey], onDelete: Cascade)
 }
 
@@ -28,8 +27,7 @@ model License {
   id             Int       @id @default(autoincrement())
   /// @Validator.IsNotEmpty()
   role           Role
-  /// @HideField({ input: true, output: true })
-  licenseKey     String    @unique
+  licenseKey     String    @unique @db.VarChar(64)
   /// @HideField({ input: true, output: true })
   createdAt      DateTime  @default(now())
   /// @HideField({ input: true, output: false })
