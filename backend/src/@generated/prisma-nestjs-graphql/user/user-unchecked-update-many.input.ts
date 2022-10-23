@@ -22,6 +22,6 @@ export class UserUncheckedUpdateManyInput {
   @HideField()
   createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @HideField()
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
   licenseKey?: StringFieldUpdateOperationsInput;
 }

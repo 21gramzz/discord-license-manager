@@ -20,6 +20,6 @@ export class UserUncheckedCreateInput {
   @HideField()
   createdAt?: Date | string;
 
-  @HideField()
+  @Field(() => String, { nullable: false })
   licenseKey!: string;
 }

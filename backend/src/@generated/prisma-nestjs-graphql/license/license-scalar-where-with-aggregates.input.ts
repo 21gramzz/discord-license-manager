@@ -3,8 +3,8 @@ import { InputType } from '@nestjs/graphql';
 import { IntWithAggregatesFilter } from '../prisma/int-with-aggregates-filter.input';
 import { EnumRoleWithAggregatesFilter } from '../prisma/enum-role-with-aggregates-filter.input';
 import { StringWithAggregatesFilter } from '../prisma/string-with-aggregates-filter.input';
-import { HideField } from '@nestjs/graphql';
 import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregates-filter.input';
+import { HideField } from '@nestjs/graphql';
 import { DateTimeNullableWithAggregatesFilter } from '../prisma/date-time-nullable-with-aggregates-filter.input';
 import { BoolWithAggregatesFilter } from '../prisma/bool-with-aggregates-filter.input';
 
@@ -25,7 +25,7 @@ export class LicenseScalarWhereWithAggregatesInput {
   @Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
   role?: EnumRoleWithAggregatesFilter;
 
-  @HideField()
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
   licenseKey?: StringWithAggregatesFilter;
 
   @HideField()

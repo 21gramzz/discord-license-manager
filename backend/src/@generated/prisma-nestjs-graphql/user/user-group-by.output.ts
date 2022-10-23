@@ -25,7 +25,7 @@ export class UserGroupBy {
   @HideField()
   createdAt!: Date | string;
 
-  @HideField()
+  @Field(() => String, { nullable: false })
   licenseKey!: string;
 
   @Field(() => UserCountAggregate, { nullable: true })

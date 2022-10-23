@@ -19,6 +19,6 @@ export class UserMaxAggregateInput {
   @HideField()
   createdAt?: true;
 
-  @HideField()
+  @Field(() => Boolean, { nullable: true })
   licenseKey?: true;
 }

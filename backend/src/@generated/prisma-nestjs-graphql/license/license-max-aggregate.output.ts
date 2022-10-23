@@ -12,7 +12,7 @@ export class LicenseMaxAggregate {
   @Field(() => Role, { nullable: true })
   role?: keyof typeof Role;
 
-  @HideField()
+  @Field(() => String, { nullable: true })
   licenseKey?: string;
 
   @HideField()

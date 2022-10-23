@@ -7,6 +7,8 @@ import { PrismaService } from './prisma.service';
 import { join } from 'path';
 import { UsersModule } from './users/users.module';
 import { LicensesModule } from './licenses/licenses.module';
+import { AdminsModule } from './admins/admins.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { LicensesModule } from './licenses/licenses.module';
     }),
     UsersModule,
     LicensesModule,
+    AdminsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],

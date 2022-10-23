@@ -6,27 +6,33 @@ import { License } from 'src/@generated/prisma-nestjs-graphql/license/license.mo
 import { AffectedRows } from 'src/@generated/prisma-nestjs-graphql/prisma/affected-rows.output';
 import { LicensesService } from './licenses.service';
 import * as randomstring from 'randomstring';
+import { UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Resolver()
 export class LicensesResolver {
   constructor(private readonly licenseService: LicensesService) {}
 
   @Query(() => [License])
+  @UseGuards(JwtAuthGuard)
   async licenses(@Args() args: FindManyLicenseArgs) {
     return this.licenseService.findManyLicense(args);
   }
 
   @Query(() => Number)
+  @UseGuards(JwtAuthGuard)
   async totalLicenses() {
     return this.licenseService.totalLicenses();
   }
 
   @Mutation(() => AffectedRows)
+  @UseGuards(JwtAuthGuard)
   async deleteManyLicense(@Args() args: DeleteManyLicenseArgs) {
     return this.licenseService.deleteManyLicense(args);
   }
 
   @Mutation(() => License)
+  @UseGuards(JwtAuthGuard)
   async createLicense(@Args() args: CreateOneLicenseArgs) {
     args.data.licenseKey = randomstring.generate(64);
     return this.licenseService.createLicense(args);

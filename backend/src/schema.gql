@@ -5,6 +5,7 @@
 type License {
   id: ID!
   role: Role!
+  licenseKey: String!
   expirationDate: DateTime
   isActivated: Boolean!
   user: User
@@ -26,6 +27,7 @@ type User {
   userName: String!
   discordId: String!
   discordAvatarId: String!
+  licenseKey: String!
   license: License!
 }
 
@@ -33,14 +35,25 @@ type AffectedRows {
   count: Int!
 }
 
+type Admin {
+  id: ID!
+  email: String!
+}
+
+type LoginResponse {
+  access_token: String!
+}
+
 type Query {
   user(where: UserWhereUniqueInput!): User!
   licenses(where: LicenseWhereInput, orderBy: [LicenseOrderByWithRelationInput!], cursor: LicenseWhereUniqueInput, take: Int, skip: Int, distinct: [LicenseScalarFieldEnum!]): [License!]!
   totalLicenses: Float!
+  admin(where: AdminWhereUniqueInput!): Admin!
 }
 
 input UserWhereUniqueInput {
   id: Int
+  licenseKey: String
 }
 
 input LicenseWhereInput {
@@ -49,6 +62,7 @@ input LicenseWhereInput {
   NOT: [LicenseWhereInput!]
   id: IntFilter
   role: EnumRoleFilter
+  licenseKey: StringFilter
   user: UserRelationFilter
 }
 
@@ -88,22 +102,6 @@ input NestedEnumRoleFilter {
   not: NestedEnumRoleFilter
 }
 
-input UserRelationFilter {
-  is: UserWhereInput
-  isNot: UserWhereInput
-}
-
-input UserWhereInput {
-  AND: [UserWhereInput!]
-  OR: [UserWhereInput!]
-  NOT: [UserWhereInput!]
-  id: IntFilter
-  userName: StringFilter
-  discordId: StringFilter
-  discordAvatarId: StringFilter
-  license: LicenseRelationFilter
-}
-
 input StringFilter {
   equals: String
   in: [String!]
@@ -132,6 +130,23 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  id: IntFilter
+  userName: StringFilter
+  discordId: StringFilter
+  discordAvatarId: StringFilter
+  licenseKey: StringFilter
+  license: LicenseRelationFilter
+}
+
 input LicenseRelationFilter {
   is: LicenseWhereInput
   isNot: LicenseWhereInput
@@ -140,6 +155,7 @@ input LicenseRelationFilter {
 input LicenseOrderByWithRelationInput {
   id: SortOrder
   role: SortOrder
+  licenseKey: SortOrder
   user: UserOrderByWithRelationInput
 }
 
@@ -153,11 +169,13 @@ input UserOrderByWithRelationInput {
   userName: SortOrder
   discordId: SortOrder
   discordAvatarId: SortOrder
+  licenseKey: SortOrder
   license: LicenseOrderByWithRelationInput
 }
 
 input LicenseWhereUniqueInput {
   id: Int
+  licenseKey: String
 }
 
 enum LicenseScalarFieldEnum {
@@ -169,13 +187,20 @@ enum LicenseScalarFieldEnum {
   isActivated
 }
 
+input AdminWhereUniqueInput {
+  id: Int
+  email: String
+}
+
 type Mutation {
   deleteManyLicense(where: LicenseWhereInput): AffectedRows!
   createLicense(data: LicenseCreateInput!): License!
+  login(loginAdminInput: LoginAdminInput!): LoginResponse!
 }
 
 input LicenseCreateInput {
   role: Role!
+  licenseKey: String!
   user: UserCreateNestedOneWithoutLicenseInput
 }
 
@@ -194,4 +219,9 @@ input UserCreateWithoutLicenseInput {
 input UserCreateOrConnectWithoutLicenseInput {
   where: UserWhereUniqueInput!
   create: UserCreateWithoutLicenseInput!
+}
+
+input LoginAdminInput {
+  email: String!
+  password: String!
 }

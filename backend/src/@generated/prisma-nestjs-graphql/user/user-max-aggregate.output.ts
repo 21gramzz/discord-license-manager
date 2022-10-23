@@ -20,6 +20,6 @@ export class UserMaxAggregate {
   @HideField()
   createdAt?: Date | string;
 
-  @HideField()
+  @Field(() => String, { nullable: true })
   licenseKey?: string;
 }

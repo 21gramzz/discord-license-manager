@@ -20,6 +20,6 @@ export class UserMaxOrderByAggregateInput {
   @HideField()
   createdAt?: keyof typeof SortOrder;
 
-  @HideField()
+  @Field(() => SortOrder, { nullable: true })
   licenseKey?: keyof typeof SortOrder;
 }
