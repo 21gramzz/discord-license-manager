@@ -40,20 +40,15 @@ type Admin {
   email: String!
 }
 
-type LoginResponse {
+type LoginAdminResponse {
   access_token: String!
 }
 
 type Query {
-  user(where: UserWhereUniqueInput!): User!
+  user: User!
   licenses(where: LicenseWhereInput, orderBy: [LicenseOrderByWithRelationInput!], cursor: LicenseWhereUniqueInput, take: Int, skip: Int, distinct: [LicenseScalarFieldEnum!]): [License!]!
   totalLicenses: Float!
   admin(where: AdminWhereUniqueInput!): Admin!
-}
-
-input UserWhereUniqueInput {
-  id: Int
-  licenseKey: String
 }
 
 input LicenseWhereInput {
@@ -195,7 +190,8 @@ input AdminWhereUniqueInput {
 type Mutation {
   deleteManyLicense(where: LicenseWhereInput): AffectedRows!
   createLicense(data: LicenseCreateInput!): License!
-  login(loginAdminInput: LoginAdminInput!): LoginResponse!
+  loginAdmin(loginAdminInput: LoginAdminInput!): LoginAdminResponse!
+  loginUser(loginUserInput: LoginUserInput!): User!
 }
 
 input LicenseCreateInput {
@@ -221,7 +217,16 @@ input UserCreateOrConnectWithoutLicenseInput {
   create: UserCreateWithoutLicenseInput!
 }
 
+input UserWhereUniqueInput {
+  id: Int
+  licenseKey: String
+}
+
 input LoginAdminInput {
   email: String!
   password: String!
+}
+
+input LoginUserInput {
+  licenseKey: String!
 }

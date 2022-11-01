@@ -53,6 +53,13 @@ enum Role {
   FAMILYANDFRIENDS
 }
 
+model Session {
+  id        String   @id
+  sid       String   @unique
+  data      String
+  expiresAt DateTime
+}
+
 generator nestgraphql {
   provider               = "node node_modules/prisma-nestjs-graphql"
   output                 = "../src/@generated/prisma-nestjs-graphql"

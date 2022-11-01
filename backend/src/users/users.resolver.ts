@@ -1,17 +1,24 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Context, Query, Resolver } from '@nestjs/graphql';
 import { User } from 'src/@generated/prisma-nestjs-graphql/user/user.model';
 import { UsersService } from './users.service';
-import { FindUniqueUserArgs } from 'src/@generated/prisma-nestjs-graphql/user/find-unique-user.args';
-import { UseGuards } from '@nestjs/common';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { NotFoundException, UseGuards } from '@nestjs/common';
+import { AuthenticatedGuard } from 'src/auth/guards/authenticated.guard';
 
 @Resolver()
 export class UsersResolver {
   constructor(private readonly usersService: UsersService) {}
 
   @Query(() => User)
-  @UseGuards(JwtAuthGuard)
-  async user(@Args() args: FindUniqueUserArgs) {
-    return await this.usersService.findUniqueUser(args);
+  @UseGuards(AuthenticatedGuard)
+  async user(@Context() context) {
+    const user = await this.usersService.findUniqueUser({
+      where: { licenseKey: context.req.session.user },
+    });
+
+    if (!user) {
+      throw new NotFoundException('Could not find user');
+    } else {
+      return user;
+    }
   }
 }

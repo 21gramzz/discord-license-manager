@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { User } from 'src/@generated/prisma-nestjs-graphql/user/user.model';
 import { FindUniqueUserArgs } from 'src/@generated/prisma-nestjs-graphql/user/find-unique-user.args';
@@ -9,16 +9,11 @@ import { UpdateOneUserArgs } from 'src/@generated/prisma-nestjs-graphql/user/upd
 export class UsersService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findUniqueUser(args: FindUniqueUserArgs): Promise<User> {
-    const user = await this.prisma.user.findUnique({
+  async findUniqueUser(args: FindUniqueUserArgs): Promise<User | null> {
+    return this.prisma.user.findUnique({
       ...args,
       include: { license: true },
     });
-    if (!user) {
-      throw new NotFoundException('Could not find user');
-    } else {
-      return user;
-    }
   }
 
   async createUser(args: CreateOneUserArgs): Promise<User> {
