@@ -9,22 +9,23 @@ import { SessionScalarFieldEnum } from './session-scalar-field.enum';
 
 @ArgsType()
 export class FindManySessionArgs {
-  @Field(() => SessionWhereInput, { nullable: true })
-  @Type(() => SessionWhereInput)
-  where?: SessionWhereInput;
 
-  @Field(() => [SessionOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<SessionOrderByWithRelationInput>;
+    @Field(() => SessionWhereInput, {nullable:true})
+    @Type(() => SessionWhereInput)
+    where?: SessionWhereInput;
 
-  @Field(() => SessionWhereUniqueInput, { nullable: true })
-  cursor?: SessionWhereUniqueInput;
+    @Field(() => [SessionOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<SessionOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => SessionWhereUniqueInput, {nullable:true})
+    cursor?: SessionWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [SessionScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof SessionScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [SessionScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof SessionScalarFieldEnum>;
 }

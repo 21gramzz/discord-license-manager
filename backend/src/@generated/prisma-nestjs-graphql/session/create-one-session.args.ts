@@ -6,8 +6,9 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateOneSessionArgs {
-  @Field(() => SessionCreateInput, { nullable: false })
-  @Type(() => SessionCreateInput)
-  @ValidateNested()
-  data!: SessionCreateInput;
+
+    @Field(() => SessionCreateInput, {nullable:false})
+    @Type(() => SessionCreateInput)
+    @ValidateNested()
+    data!: SessionCreateInput;
 }

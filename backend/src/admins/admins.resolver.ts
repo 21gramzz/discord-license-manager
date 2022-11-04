@@ -1,4 +1,4 @@
-import { UseGuards } from '@nestjs/common';
+import { NotFoundException, UseGuards } from '@nestjs/common';
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { Admin } from 'src/@generated/prisma-nestjs-graphql/admin/admin.model';
 import { FindUniqueAdminArgs } from 'src/@generated/prisma-nestjs-graphql/admin/find-unique-admin.args';
@@ -11,7 +11,13 @@ export class AdminsResolver {
 
   @Query(() => Admin)
   @UseGuards(JwtAuthGuard)
-  admin(@Args() args: FindUniqueAdminArgs) {
-    return this.adminsService.findUniqueAdmin(args);
+  async admin(@Args() args: FindUniqueAdminArgs) {
+    const admin = await this.adminsService.findUniqueAdmin(args);
+
+    if (!admin) {
+      throw new NotFoundException('Could not find user');
+    } else {
+      return admin;
+    }
   }
 }

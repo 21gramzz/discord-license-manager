@@ -11,26 +11,25 @@ import { UserUncheckedUpdateOneWithoutLicenseNestedInput } from '../user/user-un
 
 @InputType()
 export class LicenseUncheckedUpdateInput {
-  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
-  id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
-  role?: EnumRoleFieldUpdateOperationsInput;
+    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
+    id?: IntFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  licenseKey?: StringFieldUpdateOperationsInput;
+    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
+    role?: EnumRoleFieldUpdateOperationsInput;
 
-  @HideField()
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    licenseKey?: StringFieldUpdateOperationsInput;
 
-  @HideField()
-  expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
+    @HideField()
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 
-  @HideField()
-  isActivated?: BoolFieldUpdateOperationsInput;
+    @HideField()
+    expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
 
-  @Field(() => UserUncheckedUpdateOneWithoutLicenseNestedInput, {
-    nullable: true,
-  })
-  user?: UserUncheckedUpdateOneWithoutLicenseNestedInput;
+    @HideField()
+    isActivated?: BoolFieldUpdateOperationsInput;
+
+    @Field(() => UserUncheckedUpdateOneWithoutLicenseNestedInput, {nullable:true})
+    user?: UserUncheckedUpdateOneWithoutLicenseNestedInput;
 }

@@ -8,27 +8,26 @@ import { UserUncheckedCreateNestedOneWithoutLicenseInput } from '../user/user-un
 
 @InputType()
 export class LicenseUncheckedCreateInput {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => Role, { nullable: false })
-  @Validator.IsNotEmpty()
-  role!: keyof typeof Role;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => String, { nullable: false })
-  licenseKey!: string;
+    @Field(() => Role, {nullable:false})
+    @Validator.IsNotEmpty()
+    role!: keyof typeof Role;
 
-  @HideField()
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:false})
+    licenseKey!: string;
 
-  @HideField()
-  expirationDate?: Date | string;
+    @HideField()
+    createdAt?: Date | string;
 
-  @HideField()
-  isActivated?: boolean;
+    @HideField()
+    expirationDate?: Date | string;
 
-  @Field(() => UserUncheckedCreateNestedOneWithoutLicenseInput, {
-    nullable: true,
-  })
-  user?: UserUncheckedCreateNestedOneWithoutLicenseInput;
+    @HideField()
+    isActivated?: boolean;
+
+    @Field(() => UserUncheckedCreateNestedOneWithoutLicenseInput, {nullable:true})
+    user?: UserUncheckedCreateNestedOneWithoutLicenseInput;
 }

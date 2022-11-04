@@ -5,24 +5,25 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class UserCountAggregate {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => Int, { nullable: false })
-  userName!: number;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => Int, { nullable: false })
-  discordId!: number;
+    @Field(() => Int, {nullable:false})
+    userName!: number;
 
-  @Field(() => Int, { nullable: false })
-  discordAvatarId!: number;
+    @Field(() => Int, {nullable:false})
+    discordId!: number;
 
-  @HideField()
-  createdAt!: number;
+    @Field(() => Int, {nullable:false})
+    discordAvatarId!: number;
 
-  @Field(() => Int, { nullable: false })
-  licenseKey!: number;
+    @HideField()
+    createdAt!: number;
 
-  @Field(() => Int, { nullable: false })
-  _all!: number;
+    @Field(() => Int, {nullable:false})
+    licenseKey!: number;
+
+    @Field(() => Int, {nullable:false})
+    _all!: number;
 }

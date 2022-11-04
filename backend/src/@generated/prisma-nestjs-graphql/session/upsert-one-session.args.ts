@@ -7,15 +7,16 @@ import { SessionUpdateInput } from './session-update.input';
 
 @ArgsType()
 export class UpsertOneSessionArgs {
-  @Field(() => SessionWhereUniqueInput, { nullable: false })
-  @Type(() => SessionWhereUniqueInput)
-  where!: SessionWhereUniqueInput;
 
-  @Field(() => SessionCreateInput, { nullable: false })
-  @Type(() => SessionCreateInput)
-  create!: SessionCreateInput;
+    @Field(() => SessionWhereUniqueInput, {nullable:false})
+    @Type(() => SessionWhereUniqueInput)
+    where!: SessionWhereUniqueInput;
 
-  @Field(() => SessionUpdateInput, { nullable: false })
-  @Type(() => SessionUpdateInput)
-  update!: SessionUpdateInput;
+    @Field(() => SessionCreateInput, {nullable:false})
+    @Type(() => SessionCreateInput)
+    create!: SessionCreateInput;
+
+    @Field(() => SessionUpdateInput, {nullable:false})
+    @Type(() => SessionUpdateInput)
+    update!: SessionUpdateInput;
 }

@@ -8,18 +8,19 @@ import { AdminMaxAggregate } from './admin-max-aggregate.output';
 
 @ObjectType()
 export class AggregateAdmin {
-  @Field(() => AdminCountAggregate, { nullable: true })
-  _count?: AdminCountAggregate;
 
-  @Field(() => AdminAvgAggregate, { nullable: true })
-  _avg?: AdminAvgAggregate;
+    @Field(() => AdminCountAggregate, {nullable:true})
+    _count?: AdminCountAggregate;
 
-  @Field(() => AdminSumAggregate, { nullable: true })
-  _sum?: AdminSumAggregate;
+    @Field(() => AdminAvgAggregate, {nullable:true})
+    _avg?: AdminAvgAggregate;
 
-  @Field(() => AdminMinAggregate, { nullable: true })
-  _min?: AdminMinAggregate;
+    @Field(() => AdminSumAggregate, {nullable:true})
+    _sum?: AdminSumAggregate;
 
-  @Field(() => AdminMaxAggregate, { nullable: true })
-  _max?: AdminMaxAggregate;
+    @Field(() => AdminMinAggregate, {nullable:true})
+    _min?: AdminMinAggregate;
+
+    @Field(() => AdminMaxAggregate, {nullable:true})
+    _max?: AdminMaxAggregate;
 }

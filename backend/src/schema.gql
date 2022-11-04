@@ -45,9 +45,9 @@ type LoginAdminResponse {
 }
 
 type Query {
-  user: User!
   licenses(where: LicenseWhereInput, orderBy: [LicenseOrderByWithRelationInput!], cursor: LicenseWhereUniqueInput, take: Int, skip: Int, distinct: [LicenseScalarFieldEnum!]): [License!]!
   totalLicenses: Float!
+  user: User!
   admin(where: AdminWhereUniqueInput!): Admin!
 }
 

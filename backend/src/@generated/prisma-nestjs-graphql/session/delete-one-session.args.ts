@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneSessionArgs {
-  @Field(() => SessionWhereUniqueInput, { nullable: false })
-  @Type(() => SessionWhereUniqueInput)
-  where!: SessionWhereUniqueInput;
+
+    @Field(() => SessionWhereUniqueInput, {nullable:false})
+    @Type(() => SessionWhereUniqueInput)
+    where!: SessionWhereUniqueInput;
 }

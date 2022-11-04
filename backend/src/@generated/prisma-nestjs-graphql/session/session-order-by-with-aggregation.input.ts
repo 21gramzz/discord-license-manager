@@ -7,24 +7,25 @@ import { SessionMinOrderByAggregateInput } from './session-min-order-by-aggregat
 
 @InputType()
 export class SessionOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  sid?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  data?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    sid?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  expiresAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    data?: keyof typeof SortOrder;
 
-  @Field(() => SessionCountOrderByAggregateInput, { nullable: true })
-  _count?: SessionCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    expiresAt?: keyof typeof SortOrder;
 
-  @Field(() => SessionMaxOrderByAggregateInput, { nullable: true })
-  _max?: SessionMaxOrderByAggregateInput;
+    @Field(() => SessionCountOrderByAggregateInput, {nullable:true})
+    _count?: SessionCountOrderByAggregateInput;
 
-  @Field(() => SessionMinOrderByAggregateInput, { nullable: true })
-  _min?: SessionMinOrderByAggregateInput;
+    @Field(() => SessionMaxOrderByAggregateInput, {nullable:true})
+    _max?: SessionMaxOrderByAggregateInput;
+
+    @Field(() => SessionMinOrderByAggregateInput, {nullable:true})
+    _min?: SessionMinOrderByAggregateInput;
 }

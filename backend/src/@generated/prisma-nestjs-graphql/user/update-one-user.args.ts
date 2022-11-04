@@ -7,12 +7,13 @@ import { UserWhereUniqueInput } from './user-where-unique.input';
 
 @ArgsType()
 export class UpdateOneUserArgs {
-  @Field(() => UserUpdateInput, { nullable: false })
-  @Type(() => UserUpdateInput)
-  @ValidateNested()
-  data!: UserUpdateInput;
 
-  @Field(() => UserWhereUniqueInput, { nullable: false })
-  @Type(() => UserWhereUniqueInput)
-  where!: UserWhereUniqueInput;
+    @Field(() => UserUpdateInput, {nullable:false})
+    @Type(() => UserUpdateInput)
+    @ValidateNested()
+    data!: UserUpdateInput;
+
+    @Field(() => UserWhereUniqueInput, {nullable:false})
+    @Type(() => UserWhereUniqueInput)
+    where!: UserWhereUniqueInput;
 }

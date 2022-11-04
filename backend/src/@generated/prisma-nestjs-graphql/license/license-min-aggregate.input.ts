@@ -4,21 +4,22 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class LicenseMinAggregateInput {
-  @Field(() => Boolean, { nullable: true })
-  id?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  role?: true;
+    @Field(() => Boolean, {nullable:true})
+    id?: true;
 
-  @Field(() => Boolean, { nullable: true })
-  licenseKey?: true;
+    @Field(() => Boolean, {nullable:true})
+    role?: true;
 
-  @HideField()
-  createdAt?: true;
+    @Field(() => Boolean, {nullable:true})
+    licenseKey?: true;
 
-  @HideField()
-  expirationDate?: true;
+    @HideField()
+    createdAt?: true;
 
-  @HideField()
-  isActivated?: true;
+    @HideField()
+    expirationDate?: true;
+
+    @HideField()
+    isActivated?: true;
 }
