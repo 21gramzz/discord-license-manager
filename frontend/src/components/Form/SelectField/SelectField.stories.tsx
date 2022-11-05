@@ -18,7 +18,6 @@ const options: SelectFieldOption[] = [
 
 export default {
   component: SelectField,
-  title: 'SelectField',
 } as ComponentMeta<typeof SelectField>;
 
 export const Default: ComponentStoryObj<typeof SelectField> = {

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { Icon } from '../Icon';
+import { Icon } from '../../Elements/Icon';
 
 export interface SelectFieldOption {
   label: string;

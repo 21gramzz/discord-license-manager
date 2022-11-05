@@ -53,10 +53,9 @@ const Mock: React.FC<
 
 export default {
   component: Mock,
-  title: 'SelectableTable',
 } as ComponentMeta<typeof Mock>;
 
-export const Default: ComponentStoryObj<typeof Mock> = {
+export const Demo: ComponentStoryObj<typeof Mock> = {
   args: { columns, rows, width: '' },
   render: (args) => <Mock {...args} />,
 };
