@@ -6,25 +6,24 @@ import { UserOrderByWithRelationInput } from '../user/user-order-by-with-relatio
 
 @InputType()
 export class LicenseOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  role?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    role?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  licenseKey?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    licenseKey?: keyof typeof SortOrder;
+  @HideField()
+  createdAt?: keyof typeof SortOrder;
 
-    @HideField()
-    createdAt?: keyof typeof SortOrder;
+  @HideField()
+  expirationDate?: keyof typeof SortOrder;
 
-    @HideField()
-    expirationDate?: keyof typeof SortOrder;
+  @HideField()
+  isActivated?: keyof typeof SortOrder;
 
-    @HideField()
-    isActivated?: keyof typeof SortOrder;
-
-    @Field(() => UserOrderByWithRelationInput, {nullable:true})
-    user?: UserOrderByWithRelationInput;
+  @Field(() => UserOrderByWithRelationInput, { nullable: true })
+  user?: UserOrderByWithRelationInput;
 }

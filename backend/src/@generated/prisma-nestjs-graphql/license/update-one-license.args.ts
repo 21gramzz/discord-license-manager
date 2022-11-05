@@ -7,13 +7,12 @@ import { LicenseWhereUniqueInput } from './license-where-unique.input';
 
 @ArgsType()
 export class UpdateOneLicenseArgs {
+  @Field(() => LicenseUpdateInput, { nullable: false })
+  @Type(() => LicenseUpdateInput)
+  @ValidateNested()
+  data!: LicenseUpdateInput;
 
-    @Field(() => LicenseUpdateInput, {nullable:false})
-    @Type(() => LicenseUpdateInput)
-    @ValidateNested()
-    data!: LicenseUpdateInput;
-
-    @Field(() => LicenseWhereUniqueInput, {nullable:false})
-    @Type(() => LicenseWhereUniqueInput)
-    where!: LicenseWhereUniqueInput;
+  @Field(() => LicenseWhereUniqueInput, { nullable: false })
+  @Type(() => LicenseWhereUniqueInput)
+  where!: LicenseWhereUniqueInput;
 }

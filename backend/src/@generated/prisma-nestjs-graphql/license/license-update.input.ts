@@ -10,22 +10,21 @@ import { UserUpdateOneWithoutLicenseNestedInput } from '../user/user-update-one-
 
 @InputType()
 export class LicenseUpdateInput {
+  @Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
+  role?: EnumRoleFieldUpdateOperationsInput;
 
-    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
-    role?: EnumRoleFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  licenseKey?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    licenseKey?: StringFieldUpdateOperationsInput;
+  @HideField()
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @HideField()
+  expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
+  @HideField()
+  isActivated?: BoolFieldUpdateOperationsInput;
 
-    @HideField()
-    isActivated?: BoolFieldUpdateOperationsInput;
-
-    @Field(() => UserUpdateOneWithoutLicenseNestedInput, {nullable:true})
-    user?: UserUpdateOneWithoutLicenseNestedInput;
+  @Field(() => UserUpdateOneWithoutLicenseNestedInput, { nullable: true })
+  user?: UserUpdateOneWithoutLicenseNestedInput;
 }

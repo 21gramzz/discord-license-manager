@@ -6,12 +6,11 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateManySessionArgs {
+  @Field(() => [SessionCreateManyInput], { nullable: false })
+  @Type(() => SessionCreateManyInput)
+  @ValidateNested()
+  data!: Array<SessionCreateManyInput>;
 
-    @Field(() => [SessionCreateManyInput], {nullable:false})
-    @Type(() => SessionCreateManyInput)
-    @ValidateNested()
-    data!: Array<SessionCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }

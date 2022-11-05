@@ -5,14 +5,13 @@ import * as Validator from 'class-validator';
 
 @InputType()
 export class AdminCreateManyInput {
+  @Field(() => Int, { nullable: true })
+  id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+  @Field(() => String, { nullable: false })
+  @Validator.IsEmail()
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    @Validator.IsEmail()
-    email!: string;
-
-    @Field(() => String, {nullable:false})
-    password!: string;
+  @Field(() => String, { nullable: false })
+  password!: string;
 }

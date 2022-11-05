@@ -5,22 +5,21 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class UserMaxAggregate {
+  @Field(() => Int, { nullable: true })
+  id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
+  @Field(() => String, { nullable: true })
+  userName?: string;
 
-    @Field(() => String, {nullable:true})
-    userName?: string;
+  @Field(() => String, { nullable: true })
+  discordId?: string;
 
-    @Field(() => String, {nullable:true})
-    discordId?: string;
+  @Field(() => String, { nullable: true })
+  discordAvatarId?: string;
 
-    @Field(() => String, {nullable:true})
-    discordAvatarId?: string;
+  @HideField()
+  createdAt?: Date | string;
 
-    @HideField()
-    createdAt?: Date | string;
-
-    @Field(() => String, {nullable:true})
-    licenseKey?: string;
+  @Field(() => String, { nullable: true })
+  licenseKey?: string;
 }

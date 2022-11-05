@@ -7,22 +7,21 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class UserUncheckedUpdateManyInput {
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  userName?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    userName?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  discordId?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    discordId?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  discordAvatarId?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    discordAvatarId?: StringFieldUpdateOperationsInput;
+  @HideField()
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    createdAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    licenseKey?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  licenseKey?: StringFieldUpdateOperationsInput;
 }

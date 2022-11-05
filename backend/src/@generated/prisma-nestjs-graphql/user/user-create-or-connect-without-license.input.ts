@@ -6,12 +6,11 @@ import { UserCreateWithoutLicenseInput } from './user-create-without-license.inp
 
 @InputType()
 export class UserCreateOrConnectWithoutLicenseInput {
+  @Field(() => UserWhereUniqueInput, { nullable: false })
+  @Type(() => UserWhereUniqueInput)
+  where!: UserWhereUniqueInput;
 
-    @Field(() => UserWhereUniqueInput, {nullable:false})
-    @Type(() => UserWhereUniqueInput)
-    where!: UserWhereUniqueInput;
-
-    @Field(() => UserCreateWithoutLicenseInput, {nullable:false})
-    @Type(() => UserCreateWithoutLicenseInput)
-    create!: UserCreateWithoutLicenseInput;
+  @Field(() => UserCreateWithoutLicenseInput, { nullable: false })
+  @Type(() => UserCreateWithoutLicenseInput)
+  create!: UserCreateWithoutLicenseInput;
 }

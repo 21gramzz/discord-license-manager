@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueLicenseArgs {
-
-    @Field(() => LicenseWhereUniqueInput, {nullable:false})
-    @Type(() => LicenseWhereUniqueInput)
-    where!: LicenseWhereUniqueInput;
+  @Field(() => LicenseWhereUniqueInput, { nullable: false })
+  @Type(() => LicenseWhereUniqueInput)
+  where!: LicenseWhereUniqueInput;
 }

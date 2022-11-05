@@ -10,37 +10,36 @@ import { UserMaxAggregate } from './user-max-aggregate.output';
 
 @ObjectType()
 export class UserGroupBy {
+  @Field(() => Int, { nullable: false })
+  id!: number;
 
-    @Field(() => Int, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  userName!: string;
 
-    @Field(() => String, {nullable:false})
-    userName!: string;
+  @Field(() => String, { nullable: false })
+  discordId!: string;
 
-    @Field(() => String, {nullable:false})
-    discordId!: string;
+  @Field(() => String, { nullable: false })
+  discordAvatarId!: string;
 
-    @Field(() => String, {nullable:false})
-    discordAvatarId!: string;
+  @HideField()
+  createdAt!: Date | string;
 
-    @HideField()
-    createdAt!: Date | string;
+  @Field(() => String, { nullable: false })
+  licenseKey!: string;
 
-    @Field(() => String, {nullable:false})
-    licenseKey!: string;
+  @Field(() => UserCountAggregate, { nullable: true })
+  _count?: UserCountAggregate;
 
-    @Field(() => UserCountAggregate, {nullable:true})
-    _count?: UserCountAggregate;
+  @Field(() => UserAvgAggregate, { nullable: true })
+  _avg?: UserAvgAggregate;
 
-    @Field(() => UserAvgAggregate, {nullable:true})
-    _avg?: UserAvgAggregate;
+  @Field(() => UserSumAggregate, { nullable: true })
+  _sum?: UserSumAggregate;
 
-    @Field(() => UserSumAggregate, {nullable:true})
-    _sum?: UserSumAggregate;
+  @Field(() => UserMinAggregate, { nullable: true })
+  _min?: UserMinAggregate;
 
-    @Field(() => UserMinAggregate, {nullable:true})
-    _min?: UserMinAggregate;
-
-    @Field(() => UserMaxAggregate, {nullable:true})
-    _max?: UserMaxAggregate;
+  @Field(() => UserMaxAggregate, { nullable: true })
+  _max?: UserMaxAggregate;
 }

@@ -11,29 +11,28 @@ import { SessionMaxAggregateInput } from './session-max-aggregate.input';
 
 @ArgsType()
 export class SessionAggregateArgs {
+  @Field(() => SessionWhereInput, { nullable: true })
+  @Type(() => SessionWhereInput)
+  where?: SessionWhereInput;
 
-    @Field(() => SessionWhereInput, {nullable:true})
-    @Type(() => SessionWhereInput)
-    where?: SessionWhereInput;
+  @Field(() => [SessionOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<SessionOrderByWithRelationInput>;
 
-    @Field(() => [SessionOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<SessionOrderByWithRelationInput>;
+  @Field(() => SessionWhereUniqueInput, { nullable: true })
+  cursor?: SessionWhereUniqueInput;
 
-    @Field(() => SessionWhereUniqueInput, {nullable:true})
-    cursor?: SessionWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => SessionCountAggregateInput, { nullable: true })
+  _count?: SessionCountAggregateInput;
 
-    @Field(() => SessionCountAggregateInput, {nullable:true})
-    _count?: SessionCountAggregateInput;
+  @Field(() => SessionMinAggregateInput, { nullable: true })
+  _min?: SessionMinAggregateInput;
 
-    @Field(() => SessionMinAggregateInput, {nullable:true})
-    _min?: SessionMinAggregateInput;
-
-    @Field(() => SessionMaxAggregateInput, {nullable:true})
-    _max?: SessionMaxAggregateInput;
+  @Field(() => SessionMaxAggregateInput, { nullable: true })
+  _max?: SessionMaxAggregateInput;
 }

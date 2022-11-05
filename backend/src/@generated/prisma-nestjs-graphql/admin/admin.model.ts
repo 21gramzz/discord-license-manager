@@ -5,13 +5,12 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class Admin {
+  @Field(() => ID, { nullable: false })
+  id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  email!: string;
 
-    @Field(() => String, {nullable:false})
-    email!: string;
-
-    @HideField()
-    password!: string;
+  @HideField()
+  password!: string;
 }

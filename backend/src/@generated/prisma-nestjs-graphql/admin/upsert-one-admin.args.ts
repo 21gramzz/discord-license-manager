@@ -7,16 +7,15 @@ import { AdminUpdateInput } from './admin-update.input';
 
 @ArgsType()
 export class UpsertOneAdminArgs {
+  @Field(() => AdminWhereUniqueInput, { nullable: false })
+  @Type(() => AdminWhereUniqueInput)
+  where!: AdminWhereUniqueInput;
 
-    @Field(() => AdminWhereUniqueInput, {nullable:false})
-    @Type(() => AdminWhereUniqueInput)
-    where!: AdminWhereUniqueInput;
+  @Field(() => AdminCreateInput, { nullable: false })
+  @Type(() => AdminCreateInput)
+  create!: AdminCreateInput;
 
-    @Field(() => AdminCreateInput, {nullable:false})
-    @Type(() => AdminCreateInput)
-    create!: AdminCreateInput;
-
-    @Field(() => AdminUpdateInput, {nullable:false})
-    @Type(() => AdminUpdateInput)
-    update!: AdminUpdateInput;
+  @Field(() => AdminUpdateInput, { nullable: false })
+  @Type(() => AdminUpdateInput)
+  update!: AdminUpdateInput;
 }

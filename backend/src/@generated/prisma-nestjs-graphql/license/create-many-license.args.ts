@@ -6,12 +6,11 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateManyLicenseArgs {
+  @Field(() => [LicenseCreateManyInput], { nullable: false })
+  @Type(() => LicenseCreateManyInput)
+  @ValidateNested()
+  data!: Array<LicenseCreateManyInput>;
 
-    @Field(() => [LicenseCreateManyInput], {nullable:false})
-    @Type(() => LicenseCreateManyInput)
-    @ValidateNested()
-    data!: Array<LicenseCreateManyInput>;
-
-    @Field(() => Boolean, {nullable:true})
-    skipDuplicates?: boolean;
+  @Field(() => Boolean, { nullable: true })
+  skipDuplicates?: boolean;
 }
