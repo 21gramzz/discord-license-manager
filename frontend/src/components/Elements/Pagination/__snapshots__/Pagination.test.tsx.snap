@@ -2,7 +2,7 @@
 
 exports[`Storyshots Elements/Button Default 1`] = `
 <button
-  className="sc-bczRLJ imPCrX"
+  className="sc-eCYdqJ LAFSk"
 >
   Default Button
 </button>
@@ -10,42 +10,36 @@ exports[`Storyshots Elements/Button Default 1`] = `
 
 exports[`Storyshots Elements/Button Primary 1`] = `
 <button
-  className="sc-bczRLJ sc-gsnTZi imPCrX gKSuZQ"
+  className="sc-eCYdqJ sc-jSMfEi LAFSk dSXEgT"
 >
   Primary Button
 </button>
 `;
 
-exports[`Storyshots InputField Default 1`] = `
-<input
-  className="sc-dkzDqf TAkWB"
-  placeholder="Type here"
-/>
+exports[`Storyshots Elements/Modal Demo 1`] = `
+<button
+  onClick={[Function]}
+>
+  Open Modal
+</button>
 `;
 
-exports[`Storyshots InputField Error 1`] = `
-<input
-  className="sc-dkzDqf TAkWB is-invalid"
-  placeholder="Type here"
-/>
-`;
-
-exports[`Storyshots Pagination Demo 1`] = `
+exports[`Storyshots Elements/Pagination Demo 1`] = `
 <div
-  className="sc-eCYdqJ dxxXVH"
+  className="sc-gKXOVf ihELLc"
 >
   <nav
-    className="sc-jSMfEi"
+    className="sc-iBkjds"
   >
     <ul
-      className="sc-gKXOVf eVUPRk"
+      className="sc-ftvSup zoAYh"
     >
       <button
-        className="sc-ftvSup hkUMwQ"
+        className="sc-jqUVSM hYjYIo"
         onClick={[Function]}
       >
         <span
-          className="sc-hKMtZM ioWtiy"
+          className="sc-bczRLJ kcNxQY"
         >
           <svg
             aria-hidden="true"
@@ -65,80 +59,80 @@ exports[`Storyshots Pagination Demo 1`] = `
         </span>
       </button>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup jasgJO"
+          className="sc-jqUVSM iSMhjS"
           onClick={[Function]}
         >
           1
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
           onClick={[Function]}
         >
           2
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
           onClick={[Function]}
         >
           3
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
           onClick={[Function]}
         >
           4
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
           onClick={[Function]}
         >
           5
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
         >
           ...
         </button>
       </li>
       <li
-        className="sc-iBkjds fYkvqf"
+        className="sc-papXJ hqedpF"
       >
         <button
-          className="sc-ftvSup hkUMwQ"
+          className="sc-jqUVSM hYjYIo"
           onClick={[Function]}
         >
           10
         </button>
       </li>
       <button
-        className="sc-ftvSup hkUMwQ"
+        className="sc-jqUVSM hYjYIo"
         onClick={[Function]}
       >
         <span
-          className="sc-hKMtZM ioWtiy"
+          className="sc-bczRLJ kcNxQY"
         >
           <svg
             aria-hidden="true"
@@ -162,123 +156,19 @@ exports[`Storyshots Pagination Demo 1`] = `
 </div>
 `;
 
-exports[`Storyshots SelectField Default 1`] = `
-<div
-  className="sc-papXJ icykgG"
-  width="30rem"
->
-  <div
-    className="sc-hAZoDl hXWOPz"
-    onClick={[Function]}
-  >
-    <div
-      className="sc-evZas fwIBbo"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots SelectField Error 1`] = `
-<div
-  className="sc-papXJ icykgG is-invalid"
-  width="30rem"
->
-  <div
-    className="sc-hAZoDl hXWOPz"
-    onClick={[Function]}
-  >
-    <div
-      className="sc-evZas fwIBbo"
-    />
-    <div
-      className="sc-crXcEl bLfTyd"
-      onClick={[Function]}
-    >
-      <span
-        className="sc-hKMtZM ioWtiy"
-      >
-        <svg
-          aria-hidden="true"
-          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
-          fill="currentColor"
-          focusable="false"
-          height="1.5rem"
-          viewBox="0 0 24 24"
-          width="1.5rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            data-name="Layer 2"
-          >
-            <path
-              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
-              data-name="close"
-            />
-          </g>
-        </svg>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SelectField Multiple Select 1`] = `
-<div
-  className="sc-papXJ icykgG"
-  width="30rem"
->
-  <div
-    className="sc-hAZoDl hXWOPz"
-    onClick={[Function]}
-  >
-    <div
-      className="sc-evZas fwIBbo"
-    />
-    <div
-      className="sc-crXcEl bLfTyd"
-      onClick={[Function]}
-    >
-      <span
-        className="sc-hKMtZM ioWtiy"
-      >
-        <svg
-          aria-hidden="true"
-          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
-          fill="currentColor"
-          focusable="false"
-          height="1.5rem"
-          viewBox="0 0 24 24"
-          width="1.5rem"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            data-name="Layer 2"
-          >
-            <path
-              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
-              data-name="close"
-            />
-          </g>
-        </svg>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots SelectableTable Default 1`] = `
+exports[`Storyshots Elements/SelectableTable Demo 1`] = `
 <table
-  className="sc-bjUoiL EiPle"
+  className="sc-iqcoie fHYoBJ"
   width=""
 >
   <thead
-    className="sc-dmRaPn eIljfk"
+    className="sc-ksZaOG jIDUkP"
   >
     <tr
-      className="sc-idiyUo dEkvxb"
+      className="sc-crXcEl gRNtLf"
     >
       <th
-        className="sc-dIouRR bwsLZe"
+        className="sc-evZas jXzvIe"
       >
         <input
           checked={false}
@@ -287,19 +177,19 @@ exports[`Storyshots SelectableTable Default 1`] = `
         />
       </th>
       <th
-        className="sc-dIouRR duVnGl"
+        className="sc-evZas bSXcPJ"
       >
         <div>
           First Name
         </div>
         <div
-          className="sc-fEOsli hAFXGM"
+          className="sc-kDDrLX htMsPT"
           height="auto"
           onMouseDown={[Function]}
         />
       </th>
       <th
-        className="sc-dIouRR duVnGl"
+        className="sc-evZas bSXcPJ"
       >
         <div>
           Last Name
@@ -308,13 +198,13 @@ exports[`Storyshots SelectableTable Default 1`] = `
     </tr>
   </thead>
   <tbody
-    className="sc-kgflAQ gEaNGC"
+    className="sc-hAZoDl jddhlc"
   >
     <tr
-      className="sc-idiyUo dEkvxb"
+      className="sc-crXcEl gRNtLf"
     >
       <td
-        className="sc-hHLeRK wSODU"
+        className="sc-breuTD dIXDdg"
         width="50px"
       >
         <input
@@ -324,23 +214,23 @@ exports[`Storyshots SelectableTable Default 1`] = `
         />
       </td>
       <td
-        className="sc-hHLeRK egSapn"
+        className="sc-breuTD bFCTEr"
         onClick={[Function]}
       >
         John
       </td>
       <td
-        className="sc-hHLeRK egSapn"
+        className="sc-breuTD bFCTEr"
         onClick={[Function]}
       >
         Lennon
       </td>
     </tr>
     <tr
-      className="sc-idiyUo dEkvxb"
+      className="sc-crXcEl gRNtLf"
     >
       <td
-        className="sc-hHLeRK wSODU"
+        className="sc-breuTD dIXDdg"
         width="50px"
       >
         <input
@@ -350,13 +240,13 @@ exports[`Storyshots SelectableTable Default 1`] = `
         />
       </td>
       <td
-        className="sc-hHLeRK egSapn"
+        className="sc-breuTD bFCTEr"
         onClick={[Function]}
       >
         Sean
       </td>
       <td
-        className="sc-hHLeRK egSapn"
+        className="sc-breuTD bFCTEr"
         onClick={[Function]}
       >
         Lennon
@@ -364,4 +254,122 @@ exports[`Storyshots SelectableTable Default 1`] = `
     </tr>
   </tbody>
 </table>
+`;
+
+exports[`Storyshots Form/InputField Default 1`] = `
+<input
+  className="sc-fnykZs cBppzQ"
+  placeholder="Type here"
+/>
+`;
+
+exports[`Storyshots Form/InputField Error 1`] = `
+<input
+  className="sc-fnykZs cBppzQ is-invalid"
+  placeholder="Type here"
+/>
+`;
+
+exports[`Storyshots Form/SelectField Default 1`] = `
+<div
+  className="sc-fEOsli kdcOeH"
+  width="30rem"
+>
+  <div
+    className="sc-bBrHrO cZnFnQ"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-dmRaPn clntmn"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/SelectField Error 1`] = `
+<div
+  className="sc-fEOsli kdcOeH is-invalid"
+  width="30rem"
+>
+  <div
+    className="sc-bBrHrO cZnFnQ"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-dmRaPn clntmn"
+    />
+    <div
+      className="sc-hHLeRK kmyAWG"
+      onClick={[Function]}
+    >
+      <span
+        className="sc-bczRLJ kcNxQY"
+      >
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+          fill="currentColor"
+          focusable="false"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            data-name="Layer 2"
+          >
+            <path
+              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              data-name="close"
+            />
+          </g>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form/SelectField Multiple Select 1`] = `
+<div
+  className="sc-fEOsli kdcOeH"
+  width="30rem"
+>
+  <div
+    className="sc-bBrHrO cZnFnQ"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-dmRaPn clntmn"
+    />
+    <div
+      className="sc-hHLeRK kmyAWG"
+      onClick={[Function]}
+    >
+      <span
+        className="sc-bczRLJ kcNxQY"
+      >
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+          fill="currentColor"
+          focusable="false"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            data-name="Layer 2"
+          >
+            <path
+              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              data-name="close"
+            />
+          </g>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
 `;

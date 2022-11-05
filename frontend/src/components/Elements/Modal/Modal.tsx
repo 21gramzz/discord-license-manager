@@ -10,11 +10,7 @@ interface ModalProps {
 
 const modalRoot = document.getElementById('root');
 
-export const Modal: React.FC<ModalProps> = ({
-  content,
-  closeModal,
-  ...props
-}) => {
+export const Modal: React.FC<ModalProps> = ({ content, closeModal }) => {
   return modalRoot
     ? ReactDOM.createPortal(
         <Background>
@@ -56,5 +52,5 @@ const Container = styled.div`
 const IconWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0;
 `;
