@@ -1,19 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots  InputField Default 1`] = `
-<input
-  className="sc-bczRLJ fAQBvE"
-  placeholder="Type here"
-/>
-`;
-
-exports[`Storyshots  InputField Error 1`] = `
-<input
-  className="sc-bczRLJ fAQBvE is-invalid"
-  placeholder="Type here"
-/>
-`;
-
 exports[`Storyshots Elements/Button Default 1`] = `
 <button
   className="sc-gsnTZi cFnfUp"
@@ -28,4 +14,354 @@ exports[`Storyshots Elements/Button Primary 1`] = `
 >
   Primary Button
 </button>
+`;
+
+exports[`Storyshots InputField Default 1`] = `
+<input
+  className="sc-bczRLJ fAQBvE"
+  placeholder="Type here"
+/>
+`;
+
+exports[`Storyshots InputField Error 1`] = `
+<input
+  className="sc-bczRLJ fAQBvE is-invalid"
+  placeholder="Type here"
+/>
+`;
+
+exports[`Storyshots Pagination Demo 1`] = `
+<div
+  className="sc-eCYdqJ dxxXVH"
+>
+  <nav
+    className="sc-jSMfEi"
+  >
+    <ul
+      className="sc-gKXOVf eVUPRk"
+    >
+      <button
+        className="sc-ftvSup hkUMwQ"
+        onClick={[Function]}
+      >
+        <span
+          className="sc-hKMtZM ioWtiy"
+        >
+          <svg
+            aria-hidden="true"
+            className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+            fill="currentColor"
+            focusable="false"
+            height="2.2rem"
+            viewBox="0 0 16 16"
+            width="2.2rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup jasgJO"
+          onClick={[Function]}
+        >
+          1
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+          onClick={[Function]}
+        >
+          2
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+          onClick={[Function]}
+        >
+          3
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+          onClick={[Function]}
+        >
+          4
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+          onClick={[Function]}
+        >
+          5
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+        >
+          ...
+        </button>
+      </li>
+      <li
+        className="sc-iBkjds fYkvqf"
+      >
+        <button
+          className="sc-ftvSup hkUMwQ"
+          onClick={[Function]}
+        >
+          10
+        </button>
+      </li>
+      <button
+        className="sc-ftvSup hkUMwQ"
+        onClick={[Function]}
+      >
+        <span
+          className="sc-hKMtZM ioWtiy"
+        >
+          <svg
+            aria-hidden="true"
+            className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+            fill="currentColor"
+            focusable="false"
+            height="2.2rem"
+            viewBox="0 0 16 16"
+            width="2.2rem"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+              fillRule="evenodd"
+            />
+          </svg>
+        </span>
+      </button>
+    </ul>
+  </nav>
+</div>
+`;
+
+exports[`Storyshots SelectField Default 1`] = `
+<div
+  className="sc-papXJ icykgG"
+  width="30rem"
+>
+  <div
+    className="sc-hAZoDl hXWOPz"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-evZas fwIBbo"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots SelectField Error 1`] = `
+<div
+  className="sc-papXJ icykgG is-invalid"
+  width="30rem"
+>
+  <div
+    className="sc-hAZoDl hXWOPz"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-evZas fwIBbo"
+    />
+    <div
+      className="sc-crXcEl bLfTyd"
+      onClick={[Function]}
+    >
+      <span
+        className="sc-hKMtZM ioWtiy"
+      >
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+          fill="currentColor"
+          focusable="false"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            data-name="Layer 2"
+          >
+            <path
+              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              data-name="close"
+            />
+          </g>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SelectField Multiple Select 1`] = `
+<div
+  className="sc-papXJ icykgG"
+  width="30rem"
+>
+  <div
+    className="sc-hAZoDl hXWOPz"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-evZas fwIBbo"
+    />
+    <div
+      className="sc-crXcEl bLfTyd"
+      onClick={[Function]}
+    >
+      <span
+        className="sc-hKMtZM ioWtiy"
+      >
+        <svg
+          aria-hidden="true"
+          className="StyledIconBase-sc-ea9ulj-0 jChdGK"
+          fill="currentColor"
+          focusable="false"
+          height="1.5rem"
+          viewBox="0 0 24 24"
+          width="1.5rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            data-name="Layer 2"
+          >
+            <path
+              d="m13.41 12 4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"
+              data-name="close"
+            />
+          </g>
+        </svg>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots SelectableTable Default 1`] = `
+<table
+  className="sc-bjUoiL EiPle"
+  width=""
+>
+  <thead
+    className="sc-dmRaPn eIljfk"
+  >
+    <tr
+      className="sc-idiyUo dEkvxb"
+    >
+      <th
+        className="sc-dIouRR bwsLZe"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </th>
+      <th
+        className="sc-dIouRR duVnGl"
+      >
+        <div>
+          First Name
+        </div>
+        <div
+          className="sc-fEOsli hAFXGM"
+          height="auto"
+          onMouseDown={[Function]}
+        />
+      </th>
+      <th
+        className="sc-dIouRR duVnGl"
+      >
+        <div>
+          Last Name
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="sc-kgflAQ gEaNGC"
+  >
+    <tr
+      className="sc-idiyUo dEkvxb"
+    >
+      <td
+        className="sc-hHLeRK wSODU"
+        width="50px"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </td>
+      <td
+        className="sc-hHLeRK egSapn"
+        onClick={[Function]}
+      >
+        John
+      </td>
+      <td
+        className="sc-hHLeRK egSapn"
+        onClick={[Function]}
+      >
+        Lennon
+      </td>
+    </tr>
+    <tr
+      className="sc-idiyUo dEkvxb"
+    >
+      <td
+        className="sc-hHLeRK wSODU"
+        width="50px"
+      >
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="checkbox"
+        />
+      </td>
+      <td
+        className="sc-hHLeRK egSapn"
+        onClick={[Function]}
+      >
+        Sean
+      </td>
+      <td
+        className="sc-hHLeRK egSapn"
+        onClick={[Function]}
+      >
+        Lennon
+      </td>
+    </tr>
+  </tbody>
+</table>
 `;
