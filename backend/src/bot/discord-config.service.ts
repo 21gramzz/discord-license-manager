@@ -9,7 +9,7 @@ import { GatewayIntentBits } from 'discord.js';
 export class DiscordConfigService implements DiscordOptionsFactory {
   createDiscordOptions(): DiscordModuleOption {
     return {
-      token: 'your-bot-token',
+      token: process.env.DISCORD_BOT_TOKEN,
       discordClientOptions: {
         intents: [GatewayIntentBits.Guilds],
       },
