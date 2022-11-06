@@ -3,7 +3,9 @@ import { GlobalStyle } from './styles/GlobalStyles';
 import { ToggleThemeProvider } from './contexts/ToggleThemeContext';
 import { ThemeProvider } from 'styled-components';
 import { ModalProvider } from './contexts/ModalContext';
+import { ApolloProvider } from '@apollo/client';
 import { useTheme } from './hooks/useTheme';
+import client from './apollo/client';
 
 const App: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
@@ -12,7 +14,9 @@ const App: React.FC = () => {
     <ToggleThemeProvider toggleTheme={toggleTheme}>
       <ThemeProvider theme={theme}>
         <ModalProvider>
-          <GlobalStyle />
+          <ApolloProvider client={client}>
+            <GlobalStyle />
+          </ApolloProvider>
         </ModalProvider>
       </ThemeProvider>
     </ToggleThemeProvider>
