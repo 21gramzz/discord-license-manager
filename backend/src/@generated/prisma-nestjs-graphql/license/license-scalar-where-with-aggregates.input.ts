@@ -3,37 +3,38 @@ import { InputType } from '@nestjs/graphql';
 import { IntWithAggregatesFilter } from '../prisma/int-with-aggregates-filter.input';
 import { EnumRoleWithAggregatesFilter } from '../prisma/enum-role-with-aggregates-filter.input';
 import { StringWithAggregatesFilter } from '../prisma/string-with-aggregates-filter.input';
-import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregates-filter.input';
 import { HideField } from '@nestjs/graphql';
+import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregates-filter.input';
 import { DateTimeNullableWithAggregatesFilter } from '../prisma/date-time-nullable-with-aggregates-filter.input';
 import { BoolWithAggregatesFilter } from '../prisma/bool-with-aggregates-filter.input';
 
 @InputType()
 export class LicenseScalarWhereWithAggregatesInput {
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<LicenseScalarWhereWithAggregatesInput>;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
-  role?: EnumRoleWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  licenseKey?: StringWithAggregatesFilter;
+    @Field(() => EnumRoleWithAggregatesFilter, {nullable:true})
+    role?: EnumRoleWithAggregatesFilter;
 
-  @HideField()
-  createdAt?: DateTimeWithAggregatesFilter;
+    @HideField()
+    licenseKey?: StringWithAggregatesFilter;
 
-  @HideField()
-  expirationDate?: DateTimeNullableWithAggregatesFilter;
+    @HideField()
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @HideField()
-  isActivated?: BoolWithAggregatesFilter;
+    @HideField()
+    expirationDate?: DateTimeNullableWithAggregatesFilter;
+
+    @HideField()
+    isActivated?: BoolWithAggregatesFilter;
 }

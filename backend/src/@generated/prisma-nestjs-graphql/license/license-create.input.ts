@@ -7,22 +7,23 @@ import { UserCreateNestedOneWithoutLicenseInput } from '../user/user-create-nest
 
 @InputType()
 export class LicenseCreateInput {
-  @Field(() => Role, { nullable: false })
-  @Validator.IsNotEmpty()
-  role!: keyof typeof Role;
 
-  @Field(() => String, { nullable: false })
-  licenseKey!: string;
+    @Field(() => Role, {nullable:false})
+    @Validator.IsNotEmpty()
+    role!: keyof typeof Role;
 
-  @HideField()
-  createdAt?: Date | string;
+    @HideField()
+    licenseKey!: string;
 
-  @HideField()
-  expirationDate?: Date | string;
+    @HideField()
+    createdAt?: Date | string;
 
-  @HideField()
-  isActivated?: boolean;
+    @HideField()
+    expirationDate?: Date | string;
 
-  @Field(() => UserCreateNestedOneWithoutLicenseInput, { nullable: true })
-  user?: UserCreateNestedOneWithoutLicenseInput;
+    @HideField()
+    isActivated?: boolean;
+
+    @Field(() => UserCreateNestedOneWithoutLicenseInput, {nullable:true})
+    user?: UserCreateNestedOneWithoutLicenseInput;
 }

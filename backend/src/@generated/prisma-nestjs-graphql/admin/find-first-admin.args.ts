@@ -9,22 +9,23 @@ import { AdminScalarFieldEnum } from './admin-scalar-field.enum';
 
 @ArgsType()
 export class FindFirstAdminArgs {
-  @Field(() => AdminWhereInput, { nullable: true })
-  @Type(() => AdminWhereInput)
-  where?: AdminWhereInput;
 
-  @Field(() => [AdminOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<AdminOrderByWithRelationInput>;
+    @Field(() => AdminWhereInput, {nullable:true})
+    @Type(() => AdminWhereInput)
+    where?: AdminWhereInput;
 
-  @Field(() => AdminWhereUniqueInput, { nullable: true })
-  cursor?: AdminWhereUniqueInput;
+    @Field(() => [AdminOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<AdminOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => AdminWhereUniqueInput, {nullable:true})
+    cursor?: AdminWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [AdminScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof AdminScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [AdminScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof AdminScalarFieldEnum>;
 }

@@ -7,12 +7,13 @@ import { UserWhereInput } from './user-where.input';
 
 @ArgsType()
 export class UpdateManyUserArgs {
-  @Field(() => UserUpdateManyMutationInput, { nullable: false })
-  @Type(() => UserUpdateManyMutationInput)
-  @ValidateNested()
-  data!: UserUpdateManyMutationInput;
 
-  @Field(() => UserWhereInput, { nullable: true })
-  @Type(() => UserWhereInput)
-  where?: UserWhereInput;
+    @Field(() => UserUpdateManyMutationInput, {nullable:false})
+    @Type(() => UserUpdateManyMutationInput)
+    @ValidateNested()
+    data!: UserUpdateManyMutationInput;
+
+    @Field(() => UserWhereInput, {nullable:true})
+    @Type(() => UserWhereInput)
+    where?: UserWhereInput;
 }

@@ -3,41 +3,42 @@ import { InputType } from '@nestjs/graphql';
 import { IntFilter } from '../prisma/int-filter.input';
 import { EnumRoleFilter } from '../prisma/enum-role-filter.input';
 import { StringFilter } from '../prisma/string-filter.input';
-import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { HideField } from '@nestjs/graphql';
+import { DateTimeFilter } from '../prisma/date-time-filter.input';
 import { DateTimeNullableFilter } from '../prisma/date-time-nullable-filter.input';
 import { BoolFilter } from '../prisma/bool-filter.input';
 import { UserRelationFilter } from '../user/user-relation-filter.input';
 
 @InputType()
 export class LicenseWhereInput {
-  @Field(() => [LicenseWhereInput], { nullable: true })
-  AND?: Array<LicenseWhereInput>;
 
-  @Field(() => [LicenseWhereInput], { nullable: true })
-  OR?: Array<LicenseWhereInput>;
+    @Field(() => [LicenseWhereInput], {nullable:true})
+    AND?: Array<LicenseWhereInput>;
 
-  @Field(() => [LicenseWhereInput], { nullable: true })
-  NOT?: Array<LicenseWhereInput>;
+    @Field(() => [LicenseWhereInput], {nullable:true})
+    OR?: Array<LicenseWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [LicenseWhereInput], {nullable:true})
+    NOT?: Array<LicenseWhereInput>;
 
-  @Field(() => EnumRoleFilter, { nullable: true })
-  role?: EnumRoleFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  licenseKey?: StringFilter;
+    @Field(() => EnumRoleFilter, {nullable:true})
+    role?: EnumRoleFilter;
 
-  @HideField()
-  createdAt?: DateTimeFilter;
+    @HideField()
+    licenseKey?: StringFilter;
 
-  @HideField()
-  expirationDate?: DateTimeNullableFilter;
+    @HideField()
+    createdAt?: DateTimeFilter;
 
-  @HideField()
-  isActivated?: BoolFilter;
+    @HideField()
+    expirationDate?: DateTimeNullableFilter;
 
-  @Field(() => UserRelationFilter, { nullable: true })
-  user?: UserRelationFilter;
+    @HideField()
+    isActivated?: BoolFilter;
+
+    @Field(() => UserRelationFilter, {nullable:true})
+    user?: UserRelationFilter;
 }

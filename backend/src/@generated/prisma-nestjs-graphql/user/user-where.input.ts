@@ -8,33 +8,34 @@ import { LicenseRelationFilter } from '../license/license-relation-filter.input'
 
 @InputType()
 export class UserWhereInput {
-  @Field(() => [UserWhereInput], { nullable: true })
-  AND?: Array<UserWhereInput>;
 
-  @Field(() => [UserWhereInput], { nullable: true })
-  OR?: Array<UserWhereInput>;
+    @Field(() => [UserWhereInput], {nullable:true})
+    AND?: Array<UserWhereInput>;
 
-  @Field(() => [UserWhereInput], { nullable: true })
-  NOT?: Array<UserWhereInput>;
+    @Field(() => [UserWhereInput], {nullable:true})
+    OR?: Array<UserWhereInput>;
 
-  @Field(() => IntFilter, { nullable: true })
-  id?: IntFilter;
+    @Field(() => [UserWhereInput], {nullable:true})
+    NOT?: Array<UserWhereInput>;
 
-  @Field(() => StringFilter, { nullable: true })
-  userName?: StringFilter;
+    @Field(() => IntFilter, {nullable:true})
+    id?: IntFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  discordId?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    userName?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  discordAvatarId?: StringFilter;
+    @Field(() => StringFilter, {nullable:true})
+    discordId?: StringFilter;
 
-  @HideField()
-  createdAt?: DateTimeFilter;
+    @Field(() => StringFilter, {nullable:true})
+    discordAvatarId?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
-  licenseKey?: StringFilter;
+    @HideField()
+    createdAt?: DateTimeFilter;
 
-  @Field(() => LicenseRelationFilter, { nullable: true })
-  license?: LicenseRelationFilter;
+    @HideField()
+    licenseKey?: StringFilter;
+
+    @Field(() => LicenseRelationFilter, {nullable:true})
+    license?: LicenseRelationFilter;
 }

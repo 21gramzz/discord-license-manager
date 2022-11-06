@@ -6,24 +6,25 @@ import { SessionMaxAggregate } from './session-max-aggregate.output';
 
 @ObjectType()
 export class SessionGroupBy {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => String, { nullable: false })
-  sid!: string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => String, { nullable: false })
-  data!: string;
+    @Field(() => String, {nullable:false})
+    sid!: string;
 
-  @Field(() => Date, { nullable: false })
-  expiresAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    data!: string;
 
-  @Field(() => SessionCountAggregate, { nullable: true })
-  _count?: SessionCountAggregate;
+    @Field(() => Date, {nullable:false})
+    expiresAt!: Date | string;
 
-  @Field(() => SessionMinAggregate, { nullable: true })
-  _min?: SessionMinAggregate;
+    @Field(() => SessionCountAggregate, {nullable:true})
+    _count?: SessionCountAggregate;
 
-  @Field(() => SessionMaxAggregate, { nullable: true })
-  _max?: SessionMaxAggregate;
+    @Field(() => SessionMinAggregate, {nullable:true})
+    _min?: SessionMinAggregate;
+
+    @Field(() => SessionMaxAggregate, {nullable:true})
+    _max?: SessionMaxAggregate;
 }

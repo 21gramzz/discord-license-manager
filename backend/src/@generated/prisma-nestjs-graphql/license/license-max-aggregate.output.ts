@@ -6,21 +6,22 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class LicenseMaxAggregate {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => Role, { nullable: true })
-  role?: keyof typeof Role;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => String, { nullable: true })
-  licenseKey?: string;
+    @Field(() => Role, {nullable:true})
+    role?: keyof typeof Role;
 
-  @HideField()
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    licenseKey?: string;
 
-  @Field(() => Date, { nullable: true })
-  expirationDate?: Date | string;
+    @HideField()
+    createdAt?: Date | string;
 
-  @Field(() => Boolean, { nullable: true })
-  isActivated?: boolean;
+    @Field(() => Date, {nullable:true})
+    expirationDate?: Date | string;
+
+    @Field(() => Boolean, {nullable:true})
+    isActivated?: boolean;
 }

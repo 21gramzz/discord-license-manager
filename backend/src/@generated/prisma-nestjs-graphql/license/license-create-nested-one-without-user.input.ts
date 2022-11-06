@@ -7,15 +7,16 @@ import { LicenseWhereUniqueInput } from './license-where-unique.input';
 
 @InputType()
 export class LicenseCreateNestedOneWithoutUserInput {
-  @Field(() => LicenseCreateWithoutUserInput, { nullable: true })
-  @Type(() => LicenseCreateWithoutUserInput)
-  create?: LicenseCreateWithoutUserInput;
 
-  @Field(() => LicenseCreateOrConnectWithoutUserInput, { nullable: true })
-  @Type(() => LicenseCreateOrConnectWithoutUserInput)
-  connectOrCreate?: LicenseCreateOrConnectWithoutUserInput;
+    @Field(() => LicenseCreateWithoutUserInput, {nullable:true})
+    @Type(() => LicenseCreateWithoutUserInput)
+    create?: LicenseCreateWithoutUserInput;
 
-  @Field(() => LicenseWhereUniqueInput, { nullable: true })
-  @Type(() => LicenseWhereUniqueInput)
-  connect?: LicenseWhereUniqueInput;
+    @Field(() => LicenseCreateOrConnectWithoutUserInput, {nullable:true})
+    @Type(() => LicenseCreateOrConnectWithoutUserInput)
+    connectOrCreate?: LicenseCreateOrConnectWithoutUserInput;
+
+    @Field(() => LicenseWhereUniqueInput, {nullable:true})
+    @Type(() => LicenseWhereUniqueInput)
+    connect?: LicenseWhereUniqueInput;
 }

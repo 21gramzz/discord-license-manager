@@ -6,8 +6,9 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateOneAdminArgs {
-  @Field(() => AdminCreateInput, { nullable: false })
-  @Type(() => AdminCreateInput)
-  @ValidateNested()
-  data!: AdminCreateInput;
+
+    @Field(() => AdminCreateInput, {nullable:false})
+    @Type(() => AdminCreateInput)
+    @ValidateNested()
+    data!: AdminCreateInput;
 }

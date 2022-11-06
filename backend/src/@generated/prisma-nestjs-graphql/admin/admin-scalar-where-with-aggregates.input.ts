@@ -5,21 +5,22 @@ import { StringWithAggregatesFilter } from '../prisma/string-with-aggregates-fil
 
 @InputType()
 export class AdminScalarWhereWithAggregatesInput {
-  @Field(() => [AdminScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<AdminScalarWhereWithAggregatesInput>;
 
-  @Field(() => [AdminScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<AdminScalarWhereWithAggregatesInput>;
+    @Field(() => [AdminScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<AdminScalarWhereWithAggregatesInput>;
 
-  @Field(() => [AdminScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<AdminScalarWhereWithAggregatesInput>;
+    @Field(() => [AdminScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<AdminScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [AdminScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<AdminScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  email?: StringWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  password?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    email?: StringWithAggregatesFilter;
+
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    password?: StringWithAggregatesFilter;
 }

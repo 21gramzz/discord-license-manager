@@ -7,24 +7,25 @@ import { User } from '../user/user.model';
 
 @ObjectType()
 export class License {
-  @Field(() => ID, { nullable: false })
-  id!: number;
 
-  @Field(() => Role, { nullable: false })
-  role!: keyof typeof Role;
+    @Field(() => ID, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  licenseKey!: string;
+    @Field(() => Role, {nullable:false})
+    role!: keyof typeof Role;
 
-  @HideField()
-  createdAt!: Date;
+    @Field(() => String, {nullable:false})
+    licenseKey!: string;
 
-  @Field(() => Date, { nullable: true })
-  expirationDate!: Date | null;
+    @HideField()
+    createdAt!: Date;
 
-  @Field(() => Boolean, { nullable: false, defaultValue: false })
-  isActivated!: boolean;
+    @Field(() => Date, {nullable:true})
+    expirationDate!: Date | null;
 
-  @Field(() => User, { nullable: true })
-  user?: User | null;
+    @Field(() => Boolean, {nullable:false,defaultValue:false})
+    isActivated!: boolean;
+
+    @Field(() => User, {nullable:true})
+    user?: User | null;
 }

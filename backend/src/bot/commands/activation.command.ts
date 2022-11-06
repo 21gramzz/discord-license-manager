@@ -11,11 +11,13 @@ import { LicensesService } from 'src/licenses/licenses.service';
 import { UsersService } from 'src/users/users.service';
 import { ActivationDto } from '../dto/activation.dto';
 import { Client } from 'discord.js';
+import { Injectable } from '@nestjs/common';
 
 @Command({
   name: 'activate',
   description: 'activation license key',
 })
+@Injectable()
 @UsePipes(TransformPipe)
 export class ActivationCommand
   implements DiscordTransformedCommand<ActivationDto>

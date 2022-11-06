@@ -9,22 +9,23 @@ import { LicenseScalarFieldEnum } from './license-scalar-field.enum';
 
 @ArgsType()
 export class FindManyLicenseArgs {
-  @Field(() => LicenseWhereInput, { nullable: true })
-  @Type(() => LicenseWhereInput)
-  where?: LicenseWhereInput;
 
-  @Field(() => [LicenseOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<LicenseOrderByWithRelationInput>;
+    @Field(() => LicenseWhereInput, {nullable:true})
+    @Type(() => LicenseWhereInput)
+    where?: LicenseWhereInput;
 
-  @Field(() => LicenseWhereUniqueInput, { nullable: true })
-  cursor?: LicenseWhereUniqueInput;
+    @Field(() => [LicenseOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<LicenseOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => LicenseWhereUniqueInput, {nullable:true})
+    cursor?: LicenseWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => [LicenseScalarFieldEnum], { nullable: true })
-  distinct?: Array<keyof typeof LicenseScalarFieldEnum>;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
+
+    @Field(() => [LicenseScalarFieldEnum], {nullable:true})
+    distinct?: Array<keyof typeof LicenseScalarFieldEnum>;
 }

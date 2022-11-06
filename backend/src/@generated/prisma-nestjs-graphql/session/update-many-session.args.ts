@@ -7,12 +7,13 @@ import { SessionWhereInput } from './session-where.input';
 
 @ArgsType()
 export class UpdateManySessionArgs {
-  @Field(() => SessionUpdateManyMutationInput, { nullable: false })
-  @Type(() => SessionUpdateManyMutationInput)
-  @ValidateNested()
-  data!: SessionUpdateManyMutationInput;
 
-  @Field(() => SessionWhereInput, { nullable: true })
-  @Type(() => SessionWhereInput)
-  where?: SessionWhereInput;
+    @Field(() => SessionUpdateManyMutationInput, {nullable:false})
+    @Type(() => SessionUpdateManyMutationInput)
+    @ValidateNested()
+    data!: SessionUpdateManyMutationInput;
+
+    @Field(() => SessionWhereInput, {nullable:true})
+    @Type(() => SessionWhereInput)
+    where?: SessionWhereInput;
 }

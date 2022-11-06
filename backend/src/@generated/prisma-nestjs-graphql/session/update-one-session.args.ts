@@ -7,12 +7,13 @@ import { SessionWhereUniqueInput } from './session-where-unique.input';
 
 @ArgsType()
 export class UpdateOneSessionArgs {
-  @Field(() => SessionUpdateInput, { nullable: false })
-  @Type(() => SessionUpdateInput)
-  @ValidateNested()
-  data!: SessionUpdateInput;
 
-  @Field(() => SessionWhereUniqueInput, { nullable: false })
-  @Type(() => SessionWhereUniqueInput)
-  where!: SessionWhereUniqueInput;
+    @Field(() => SessionUpdateInput, {nullable:false})
+    @Type(() => SessionUpdateInput)
+    @ValidateNested()
+    data!: SessionUpdateInput;
+
+    @Field(() => SessionWhereUniqueInput, {nullable:false})
+    @Type(() => SessionWhereUniqueInput)
+    where!: SessionWhereUniqueInput;
 }

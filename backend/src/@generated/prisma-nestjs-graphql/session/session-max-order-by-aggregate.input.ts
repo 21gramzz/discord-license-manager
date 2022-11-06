@@ -4,15 +4,16 @@ import { SortOrder } from '../prisma/sort-order.enum';
 
 @InputType()
 export class SessionMaxOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  sid?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  data?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    sid?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  expiresAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    data?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    expiresAt?: keyof typeof SortOrder;
 }
