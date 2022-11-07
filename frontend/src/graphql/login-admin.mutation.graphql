@@ -1,0 +1,5 @@
+mutation loginAdmin($email: String!, $password: String!) {
+  loginAdmin(loginAdminInput: { email: $email, password: $password }) {
+    access_token
+  }
+}
