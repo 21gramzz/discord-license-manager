@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: 0.025em;
         margin: 0;
         padding: 0;
-        background-color: ${({ theme }) => theme.body};
+        background-color: ${({ theme }) => theme.background};
         color: ${({ theme }) => theme.text};
         height: 100vh;
         width: 100vw;

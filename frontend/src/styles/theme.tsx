@@ -26,9 +26,9 @@ export const darkTheme: Theme = {
   ...sharedColors,
   text: '#fafafa',
   subText: '#9b9b9b',
-  body: '#0a1929',
+  body: '#001e3c',
   surface: '#304567',
-  background: '#001e3c',
+  background: '#0a1929',
   border: '#bebebe',
   accent: '#2196f3',
 };
@@ -40,7 +40,7 @@ export const lightTheme: Theme = {
   body: '#fafafa',
   surface: '#e8e8ed',
   background: '#f5f5f5',
-  border: '#d1d5db',
+  border: '#000',
   accent: '#2196f3',
 };
 
