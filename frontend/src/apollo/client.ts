@@ -33,7 +33,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = createHttpLink({
-  uri: process.env.BACKEND_URL,
+  uri: process.env.REACT_APP_API_URL,
 });
 
 const client = new ApolloClient({
