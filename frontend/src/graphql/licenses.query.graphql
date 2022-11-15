@@ -1,0 +1,9 @@
+query Licenses($skip: Int!, $take: Int!) {
+  licenses(skip: $skip, take: $take) {
+    id
+    licenseKey
+    expirationDate
+    role
+    isActivated
+  }
+}

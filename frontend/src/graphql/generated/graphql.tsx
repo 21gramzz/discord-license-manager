@@ -275,6 +275,23 @@ export type UserWhereUniqueInput = {
   id?: InputMaybe<Scalars['Int']>;
 };
 
+export type LicensesQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  take: Scalars['Int'];
+}>;
+
+export type LicensesQuery = {
+  __typename?: 'Query';
+  licenses: Array<{
+    __typename?: 'License';
+    id: string;
+    licenseKey: string;
+    expirationDate?: any | null;
+    role: Role;
+    isActivated: boolean;
+  }>;
+};
+
 export type LoginAdminMutationVariables = Exact<{
   email: Scalars['String'];
   password: Scalars['String'];
@@ -285,6 +302,71 @@ export type LoginAdminMutation = {
   loginAdmin: { __typename?: 'LoginAdminResponse'; access_token: string };
 };
 
+export type TotalLicensesQueryVariables = Exact<{ [key: string]: never }>;
+
+export type TotalLicensesQuery = {
+  __typename?: 'Query';
+  totalLicenses: number;
+};
+
+export const LicensesDocument = gql`
+  query Licenses($skip: Int!, $take: Int!) {
+    licenses(skip: $skip, take: $take) {
+      id
+      licenseKey
+      expirationDate
+      role
+      isActivated
+    }
+  }
+`;
+
+/**
+ * __useLicensesQuery__
+ *
+ * To run a query within a React component, call `useLicensesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLicensesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLicensesQuery({
+ *   variables: {
+ *      skip: // value for 'skip'
+ *      take: // value for 'take'
+ *   },
+ * });
+ */
+export function useLicensesQuery(
+  baseOptions: Apollo.QueryHookOptions<LicensesQuery, LicensesQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<LicensesQuery, LicensesQueryVariables>(
+    LicensesDocument,
+    options,
+  );
+}
+export function useLicensesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    LicensesQuery,
+    LicensesQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<LicensesQuery, LicensesQueryVariables>(
+    LicensesDocument,
+    options,
+  );
+}
+export type LicensesQueryHookResult = ReturnType<typeof useLicensesQuery>;
+export type LicensesLazyQueryHookResult = ReturnType<
+  typeof useLicensesLazyQuery
+>;
+export type LicensesQueryResult = Apollo.QueryResult<
+  LicensesQuery,
+  LicensesQueryVariables
+>;
 export const LoginAdminDocument = gql`
   mutation loginAdmin($email: String!, $password: String!) {
     loginAdmin(loginAdminInput: { email: $email, password: $password }) {
@@ -335,4 +417,59 @@ export type LoginAdminMutationResult =
 export type LoginAdminMutationOptions = Apollo.BaseMutationOptions<
   LoginAdminMutation,
   LoginAdminMutationVariables
+>;
+export const TotalLicensesDocument = gql`
+  query TotalLicenses {
+    totalLicenses
+  }
+`;
+
+/**
+ * __useTotalLicensesQuery__
+ *
+ * To run a query within a React component, call `useTotalLicensesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useTotalLicensesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useTotalLicensesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useTotalLicensesQuery(
+  baseOptions?: Apollo.QueryHookOptions<
+    TotalLicensesQuery,
+    TotalLicensesQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<TotalLicensesQuery, TotalLicensesQueryVariables>(
+    TotalLicensesDocument,
+    options,
+  );
+}
+export function useTotalLicensesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    TotalLicensesQuery,
+    TotalLicensesQueryVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<TotalLicensesQuery, TotalLicensesQueryVariables>(
+    TotalLicensesDocument,
+    options,
+  );
+}
+export type TotalLicensesQueryHookResult = ReturnType<
+  typeof useTotalLicensesQuery
+>;
+export type TotalLicensesLazyQueryHookResult = ReturnType<
+  typeof useTotalLicensesLazyQuery
+>;
+export type TotalLicensesQueryResult = Apollo.QueryResult<
+  TotalLicensesQuery,
+  TotalLicensesQueryVariables
 >;
