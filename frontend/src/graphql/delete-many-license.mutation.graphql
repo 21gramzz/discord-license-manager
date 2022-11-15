@@ -1,0 +1,5 @@
+mutation DeleteManyLicense($where: LicenseWhereInput!) {
+  deleteManyLicense(where: $where) {
+    count
+  }
+}

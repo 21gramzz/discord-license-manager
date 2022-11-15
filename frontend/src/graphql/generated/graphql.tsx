@@ -38,6 +38,16 @@ export type AffectedRows = {
   count: Scalars['Int'];
 };
 
+export type CreateManyLicenseInput = {
+  qty: Scalars['Float'];
+  role: Role;
+};
+
+export type CreateManyLicenseResponse = {
+  __typename?: 'CreateManyLicenseResponse';
+  count: Scalars['Float'];
+};
+
 export type EnumRoleFilter = {
   equals?: InputMaybe<Role>;
   in?: InputMaybe<Array<Role>>;
@@ -121,6 +131,7 @@ export type LoginUserInput = {
 export type Mutation = {
   __typename?: 'Mutation';
   createLicense: License;
+  createManyLicense: CreateManyLicenseResponse;
   deleteManyLicense: AffectedRows;
   loginAdmin: LoginAdminResponse;
   loginUser: User;
@@ -128,6 +139,10 @@ export type Mutation = {
 
 export type MutationCreateLicenseArgs = {
   data: LicenseCreateInput;
+};
+
+export type MutationCreateManyLicenseArgs = {
+  data: CreateManyLicenseInput;
 };
 
 export type MutationDeleteManyLicenseArgs = {
@@ -275,6 +290,27 @@ export type UserWhereUniqueInput = {
   id?: InputMaybe<Scalars['Int']>;
 };
 
+export type CreateManyLicenseMutationVariables = Exact<{
+  data: CreateManyLicenseInput;
+}>;
+
+export type CreateManyLicenseMutation = {
+  __typename?: 'Mutation';
+  createManyLicense: {
+    __typename?: 'CreateManyLicenseResponse';
+    count: number;
+  };
+};
+
+export type DeleteManyLicenseMutationVariables = Exact<{
+  where: LicenseWhereInput;
+}>;
+
+export type DeleteManyLicenseMutation = {
+  __typename?: 'Mutation';
+  deleteManyLicense: { __typename?: 'AffectedRows'; count: number };
+};
+
 export type LicensesQueryVariables = Exact<{
   skip: Scalars['Int'];
   take: Scalars['Int'];
@@ -309,6 +345,106 @@ export type TotalLicensesQuery = {
   totalLicenses: number;
 };
 
+export const CreateManyLicenseDocument = gql`
+  mutation CreateManyLicense($data: CreateManyLicenseInput!) {
+    createManyLicense(data: $data) {
+      count
+    }
+  }
+`;
+export type CreateManyLicenseMutationFn = Apollo.MutationFunction<
+  CreateManyLicenseMutation,
+  CreateManyLicenseMutationVariables
+>;
+
+/**
+ * __useCreateManyLicenseMutation__
+ *
+ * To run a mutation, you first call `useCreateManyLicenseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateManyLicenseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createManyLicenseMutation, { data, loading, error }] = useCreateManyLicenseMutation({
+ *   variables: {
+ *      data: // value for 'data'
+ *   },
+ * });
+ */
+export function useCreateManyLicenseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    CreateManyLicenseMutation,
+    CreateManyLicenseMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    CreateManyLicenseMutation,
+    CreateManyLicenseMutationVariables
+  >(CreateManyLicenseDocument, options);
+}
+export type CreateManyLicenseMutationHookResult = ReturnType<
+  typeof useCreateManyLicenseMutation
+>;
+export type CreateManyLicenseMutationResult =
+  Apollo.MutationResult<CreateManyLicenseMutation>;
+export type CreateManyLicenseMutationOptions = Apollo.BaseMutationOptions<
+  CreateManyLicenseMutation,
+  CreateManyLicenseMutationVariables
+>;
+export const DeleteManyLicenseDocument = gql`
+  mutation DeleteManyLicense($where: LicenseWhereInput!) {
+    deleteManyLicense(where: $where) {
+      count
+    }
+  }
+`;
+export type DeleteManyLicenseMutationFn = Apollo.MutationFunction<
+  DeleteManyLicenseMutation,
+  DeleteManyLicenseMutationVariables
+>;
+
+/**
+ * __useDeleteManyLicenseMutation__
+ *
+ * To run a mutation, you first call `useDeleteManyLicenseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useDeleteManyLicenseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [deleteManyLicenseMutation, { data, loading, error }] = useDeleteManyLicenseMutation({
+ *   variables: {
+ *      where: // value for 'where'
+ *   },
+ * });
+ */
+export function useDeleteManyLicenseMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    DeleteManyLicenseMutation,
+    DeleteManyLicenseMutationVariables
+  >,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<
+    DeleteManyLicenseMutation,
+    DeleteManyLicenseMutationVariables
+  >(DeleteManyLicenseDocument, options);
+}
+export type DeleteManyLicenseMutationHookResult = ReturnType<
+  typeof useDeleteManyLicenseMutation
+>;
+export type DeleteManyLicenseMutationResult =
+  Apollo.MutationResult<DeleteManyLicenseMutation>;
+export type DeleteManyLicenseMutationOptions = Apollo.BaseMutationOptions<
+  DeleteManyLicenseMutation,
+  DeleteManyLicenseMutationVariables
+>;
 export const LicensesDocument = gql`
   query Licenses($skip: Int!, $take: Int!) {
     licenses(skip: $skip, take: $take) {

@@ -1,0 +1,5 @@
+mutation CreateManyLicense($data: CreateManyLicenseInput!) {
+  createManyLicense(data: $data) {
+    count
+  }
+}
