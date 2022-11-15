@@ -6,25 +6,24 @@ import { LicenseOrderByWithRelationInput } from '../license/license-order-by-wit
 
 @InputType()
 export class UserOrderByWithRelationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  userName?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    userName?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  discordId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    discordId?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  discordAvatarId?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    discordAvatarId?: keyof typeof SortOrder;
+  @HideField()
+  createdAt?: keyof typeof SortOrder;
 
-    @HideField()
-    createdAt?: keyof typeof SortOrder;
+  @HideField()
+  licenseKey?: keyof typeof SortOrder;
 
-    @HideField()
-    licenseKey?: keyof typeof SortOrder;
-
-    @Field(() => LicenseOrderByWithRelationInput, {nullable:true})
-    license?: LicenseOrderByWithRelationInput;
+  @Field(() => LicenseOrderByWithRelationInput, { nullable: true })
+  license?: LicenseOrderByWithRelationInput;
 }

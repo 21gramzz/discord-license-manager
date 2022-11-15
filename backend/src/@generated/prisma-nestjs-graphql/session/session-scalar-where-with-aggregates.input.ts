@@ -6,26 +6,25 @@ import { DateTimeWithAggregatesFilter } from '../prisma/date-time-with-aggregate
 
 @InputType()
 export class SessionScalarWhereWithAggregatesInput {
+  @Field(() => [SessionScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: Array<SessionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [SessionScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<SessionScalarWhereWithAggregatesInput>;
+  @Field(() => [SessionScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: Array<SessionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [SessionScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<SessionScalarWhereWithAggregatesInput>;
+  @Field(() => [SessionScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: Array<SessionScalarWhereWithAggregatesInput>;
 
-    @Field(() => [SessionScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<SessionScalarWhereWithAggregatesInput>;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  id?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    id?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  sid?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    sid?: StringWithAggregatesFilter;
+  @Field(() => StringWithAggregatesFilter, { nullable: true })
+  @Type(() => StringWithAggregatesFilter)
+  data?: StringWithAggregatesFilter;
 
-    @Field(() => StringWithAggregatesFilter, {nullable:true})
-    @Type(() => StringWithAggregatesFilter)
-    data?: StringWithAggregatesFilter;
-
-    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
-    expiresAt?: DateTimeWithAggregatesFilter;
+  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
+  expiresAt?: DateTimeWithAggregatesFilter;
 }

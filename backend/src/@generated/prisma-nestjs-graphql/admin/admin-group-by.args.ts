@@ -14,38 +14,37 @@ import { AdminMaxAggregateInput } from './admin-max-aggregate.input';
 
 @ArgsType()
 export class AdminGroupByArgs {
+  @Field(() => AdminWhereInput, { nullable: true })
+  @Type(() => AdminWhereInput)
+  where?: AdminWhereInput;
 
-    @Field(() => AdminWhereInput, {nullable:true})
-    @Type(() => AdminWhereInput)
-    where?: AdminWhereInput;
+  @Field(() => [AdminOrderByWithAggregationInput], { nullable: true })
+  orderBy?: Array<AdminOrderByWithAggregationInput>;
 
-    @Field(() => [AdminOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<AdminOrderByWithAggregationInput>;
+  @Field(() => [AdminScalarFieldEnum], { nullable: false })
+  by!: Array<keyof typeof AdminScalarFieldEnum>;
 
-    @Field(() => [AdminScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof AdminScalarFieldEnum>;
+  @Field(() => AdminScalarWhereWithAggregatesInput, { nullable: true })
+  having?: AdminScalarWhereWithAggregatesInput;
 
-    @Field(() => AdminScalarWhereWithAggregatesInput, {nullable:true})
-    having?: AdminScalarWhereWithAggregatesInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => AdminCountAggregateInput, { nullable: true })
+  _count?: AdminCountAggregateInput;
 
-    @Field(() => AdminCountAggregateInput, {nullable:true})
-    _count?: AdminCountAggregateInput;
+  @Field(() => AdminAvgAggregateInput, { nullable: true })
+  _avg?: AdminAvgAggregateInput;
 
-    @Field(() => AdminAvgAggregateInput, {nullable:true})
-    _avg?: AdminAvgAggregateInput;
+  @Field(() => AdminSumAggregateInput, { nullable: true })
+  _sum?: AdminSumAggregateInput;
 
-    @Field(() => AdminSumAggregateInput, {nullable:true})
-    _sum?: AdminSumAggregateInput;
+  @Field(() => AdminMinAggregateInput, { nullable: true })
+  _min?: AdminMinAggregateInput;
 
-    @Field(() => AdminMinAggregateInput, {nullable:true})
-    _min?: AdminMinAggregateInput;
-
-    @Field(() => AdminMaxAggregateInput, {nullable:true})
-    _max?: AdminMaxAggregateInput;
+  @Field(() => AdminMaxAggregateInput, { nullable: true })
+  _max?: AdminMaxAggregateInput;
 }

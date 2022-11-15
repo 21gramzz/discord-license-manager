@@ -8,19 +8,18 @@ import { LicenseMaxAggregate } from './license-max-aggregate.output';
 
 @ObjectType()
 export class AggregateLicense {
+  @Field(() => LicenseCountAggregate, { nullable: true })
+  _count?: LicenseCountAggregate;
 
-    @Field(() => LicenseCountAggregate, {nullable:true})
-    _count?: LicenseCountAggregate;
+  @Field(() => LicenseAvgAggregate, { nullable: true })
+  _avg?: LicenseAvgAggregate;
 
-    @Field(() => LicenseAvgAggregate, {nullable:true})
-    _avg?: LicenseAvgAggregate;
+  @Field(() => LicenseSumAggregate, { nullable: true })
+  _sum?: LicenseSumAggregate;
 
-    @Field(() => LicenseSumAggregate, {nullable:true})
-    _sum?: LicenseSumAggregate;
+  @Field(() => LicenseMinAggregate, { nullable: true })
+  _min?: LicenseMinAggregate;
 
-    @Field(() => LicenseMinAggregate, {nullable:true})
-    _min?: LicenseMinAggregate;
-
-    @Field(() => LicenseMaxAggregate, {nullable:true})
-    _max?: LicenseMaxAggregate;
+  @Field(() => LicenseMaxAggregate, { nullable: true })
+  _max?: LicenseMaxAggregate;
 }

@@ -6,9 +6,8 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateOneLicenseArgs {
-
-    @Field(() => LicenseCreateInput, {nullable:false})
-    @Type(() => LicenseCreateInput)
-    @ValidateNested()
-    data!: LicenseCreateInput;
+  @Field(() => LicenseCreateInput, { nullable: false })
+  @Type(() => LicenseCreateInput)
+  @ValidateNested()
+  data!: LicenseCreateInput;
 }

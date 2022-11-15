@@ -35,6 +35,10 @@ type AffectedRows {
   count: Int!
 }
 
+type CreateManyLicenseResponse {
+  count: Float!
+}
+
 type Admin {
   id: ID!
   email: String!
@@ -185,6 +189,7 @@ input AdminWhereUniqueInput {
 type Mutation {
   deleteManyLicense(where: LicenseWhereInput): AffectedRows!
   createLicense(data: LicenseCreateInput!): License!
+  createManyLicense(data: CreateManyLicenseInput!): CreateManyLicenseResponse!
   loginAdmin(loginAdminInput: LoginAdminInput!): LoginAdminResponse!
   loginUser(loginUserInput: LoginUserInput!): User!
 }
@@ -213,6 +218,11 @@ input UserCreateOrConnectWithoutLicenseInput {
 
 input UserWhereUniqueInput {
   id: Int
+}
+
+input CreateManyLicenseInput {
+  role: Role!
+  qty: Float!
 }
 
 input LoginAdminInput {

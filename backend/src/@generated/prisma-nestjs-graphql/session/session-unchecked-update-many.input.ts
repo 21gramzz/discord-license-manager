@@ -6,17 +6,16 @@ import { DateTimeFieldUpdateOperationsInput } from '../prisma/date-time-field-up
 
 @InputType()
 export class SessionUncheckedUpdateManyInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  id?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    id?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  sid?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    sid?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  @Type(() => StringFieldUpdateOperationsInput)
+  data?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    @Type(() => StringFieldUpdateOperationsInput)
-    data?: StringFieldUpdateOperationsInput;
-
-    @Field(() => DateTimeFieldUpdateOperationsInput, {nullable:true})
-    expiresAt?: DateTimeFieldUpdateOperationsInput;
+  @Field(() => DateTimeFieldUpdateOperationsInput, { nullable: true })
+  expiresAt?: DateTimeFieldUpdateOperationsInput;
 }

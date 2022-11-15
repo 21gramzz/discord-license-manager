@@ -7,19 +7,20 @@ import { LicenseUpdateOneRequiredWithoutUserNestedInput } from '../license/licen
 
 @InputType()
 export class UserUpdateInput {
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  userName?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    userName?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  discordId?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    discordId?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  discordAvatarId?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    discordAvatarId?: StringFieldUpdateOperationsInput;
+  @HideField()
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    createdAt?: DateTimeFieldUpdateOperationsInput;
-
-    @Field(() => LicenseUpdateOneRequiredWithoutUserNestedInput, {nullable:true})
-    license?: LicenseUpdateOneRequiredWithoutUserNestedInput;
+  @Field(() => LicenseUpdateOneRequiredWithoutUserNestedInput, {
+    nullable: true,
+  })
+  license?: LicenseUpdateOneRequiredWithoutUserNestedInput;
 }

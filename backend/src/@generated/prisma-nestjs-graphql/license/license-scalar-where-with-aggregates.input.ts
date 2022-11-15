@@ -10,31 +10,30 @@ import { BoolWithAggregatesFilter } from '../prisma/bool-with-aggregates-filter.
 
 @InputType()
 export class LicenseScalarWhereWithAggregatesInput {
+  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
+  AND?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<LicenseScalarWhereWithAggregatesInput>;
+  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
+  OR?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<LicenseScalarWhereWithAggregatesInput>;
+  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
+  NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
+  @Field(() => IntWithAggregatesFilter, { nullable: true })
+  id?: IntWithAggregatesFilter;
 
-    @Field(() => IntWithAggregatesFilter, {nullable:true})
-    id?: IntWithAggregatesFilter;
+  @Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
+  role?: EnumRoleWithAggregatesFilter;
 
-    @Field(() => EnumRoleWithAggregatesFilter, {nullable:true})
-    role?: EnumRoleWithAggregatesFilter;
+  @HideField()
+  licenseKey?: StringWithAggregatesFilter;
 
-    @HideField()
-    licenseKey?: StringWithAggregatesFilter;
+  @HideField()
+  createdAt?: DateTimeWithAggregatesFilter;
 
-    @HideField()
-    createdAt?: DateTimeWithAggregatesFilter;
+  @HideField()
+  expirationDate?: DateTimeNullableWithAggregatesFilter;
 
-    @HideField()
-    expirationDate?: DateTimeNullableWithAggregatesFilter;
-
-    @HideField()
-    isActivated?: BoolWithAggregatesFilter;
+  @HideField()
+  isActivated?: BoolWithAggregatesFilter;
 }

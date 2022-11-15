@@ -6,9 +6,8 @@ import { ValidateNested } from 'class-validator';
 
 @ArgsType()
 export class CreateOneUserArgs {
-
-    @Field(() => UserCreateInput, {nullable:false})
-    @Type(() => UserCreateInput)
-    @ValidateNested()
-    data!: UserCreateInput;
+  @Field(() => UserCreateInput, { nullable: false })
+  @Type(() => UserCreateInput)
+  @ValidateNested()
+  data!: UserCreateInput;
 }

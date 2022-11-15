@@ -13,35 +13,34 @@ import { AdminMaxAggregateInput } from './admin-max-aggregate.input';
 
 @ArgsType()
 export class AdminAggregateArgs {
+  @Field(() => AdminWhereInput, { nullable: true })
+  @Type(() => AdminWhereInput)
+  where?: AdminWhereInput;
 
-    @Field(() => AdminWhereInput, {nullable:true})
-    @Type(() => AdminWhereInput)
-    where?: AdminWhereInput;
+  @Field(() => [AdminOrderByWithRelationInput], { nullable: true })
+  orderBy?: Array<AdminOrderByWithRelationInput>;
 
-    @Field(() => [AdminOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<AdminOrderByWithRelationInput>;
+  @Field(() => AdminWhereUniqueInput, { nullable: true })
+  cursor?: AdminWhereUniqueInput;
 
-    @Field(() => AdminWhereUniqueInput, {nullable:true})
-    cursor?: AdminWhereUniqueInput;
+  @Field(() => Int, { nullable: true })
+  take?: number;
 
-    @Field(() => Int, {nullable:true})
-    take?: number;
+  @Field(() => Int, { nullable: true })
+  skip?: number;
 
-    @Field(() => Int, {nullable:true})
-    skip?: number;
+  @Field(() => AdminCountAggregateInput, { nullable: true })
+  _count?: AdminCountAggregateInput;
 
-    @Field(() => AdminCountAggregateInput, {nullable:true})
-    _count?: AdminCountAggregateInput;
+  @Field(() => AdminAvgAggregateInput, { nullable: true })
+  _avg?: AdminAvgAggregateInput;
 
-    @Field(() => AdminAvgAggregateInput, {nullable:true})
-    _avg?: AdminAvgAggregateInput;
+  @Field(() => AdminSumAggregateInput, { nullable: true })
+  _sum?: AdminSumAggregateInput;
 
-    @Field(() => AdminSumAggregateInput, {nullable:true})
-    _sum?: AdminSumAggregateInput;
+  @Field(() => AdminMinAggregateInput, { nullable: true })
+  _min?: AdminMinAggregateInput;
 
-    @Field(() => AdminMinAggregateInput, {nullable:true})
-    _min?: AdminMinAggregateInput;
-
-    @Field(() => AdminMaxAggregateInput, {nullable:true})
-    _max?: AdminMaxAggregateInput;
+  @Field(() => AdminMaxAggregateInput, { nullable: true })
+  _max?: AdminMaxAggregateInput;
 }

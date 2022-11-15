@@ -7,16 +7,15 @@ import { LicenseUpdateInput } from './license-update.input';
 
 @ArgsType()
 export class UpsertOneLicenseArgs {
+  @Field(() => LicenseWhereUniqueInput, { nullable: false })
+  @Type(() => LicenseWhereUniqueInput)
+  where!: LicenseWhereUniqueInput;
 
-    @Field(() => LicenseWhereUniqueInput, {nullable:false})
-    @Type(() => LicenseWhereUniqueInput)
-    where!: LicenseWhereUniqueInput;
+  @Field(() => LicenseCreateInput, { nullable: false })
+  @Type(() => LicenseCreateInput)
+  create!: LicenseCreateInput;
 
-    @Field(() => LicenseCreateInput, {nullable:false})
-    @Type(() => LicenseCreateInput)
-    create!: LicenseCreateInput;
-
-    @Field(() => LicenseUpdateInput, {nullable:false})
-    @Type(() => LicenseUpdateInput)
-    update!: LicenseUpdateInput;
+  @Field(() => LicenseUpdateInput, { nullable: false })
+  @Type(() => LicenseUpdateInput)
+  update!: LicenseUpdateInput;
 }

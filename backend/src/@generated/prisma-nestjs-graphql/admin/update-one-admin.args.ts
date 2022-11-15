@@ -7,13 +7,12 @@ import { AdminWhereUniqueInput } from './admin-where-unique.input';
 
 @ArgsType()
 export class UpdateOneAdminArgs {
+  @Field(() => AdminUpdateInput, { nullable: false })
+  @Type(() => AdminUpdateInput)
+  @ValidateNested()
+  data!: AdminUpdateInput;
 
-    @Field(() => AdminUpdateInput, {nullable:false})
-    @Type(() => AdminUpdateInput)
-    @ValidateNested()
-    data!: AdminUpdateInput;
-
-    @Field(() => AdminWhereUniqueInput, {nullable:false})
-    @Type(() => AdminWhereUniqueInput)
-    where!: AdminWhereUniqueInput;
+  @Field(() => AdminWhereUniqueInput, { nullable: false })
+  @Type(() => AdminWhereUniqueInput)
+  where!: AdminWhereUniqueInput;
 }

@@ -9,19 +9,18 @@ import { BoolFieldUpdateOperationsInput } from '../prisma/bool-field-update-oper
 
 @InputType()
 export class LicenseUpdateManyMutationInput {
+  @Field(() => EnumRoleFieldUpdateOperationsInput, { nullable: true })
+  role?: EnumRoleFieldUpdateOperationsInput;
 
-    @Field(() => EnumRoleFieldUpdateOperationsInput, {nullable:true})
-    role?: EnumRoleFieldUpdateOperationsInput;
+  @HideField()
+  licenseKey?: StringFieldUpdateOperationsInput;
 
-    @HideField()
-    licenseKey?: StringFieldUpdateOperationsInput;
+  @HideField()
+  createdAt?: DateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    createdAt?: DateTimeFieldUpdateOperationsInput;
+  @HideField()
+  expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
 
-    @HideField()
-    expirationDate?: NullableDateTimeFieldUpdateOperationsInput;
-
-    @HideField()
-    isActivated?: BoolFieldUpdateOperationsInput;
+  @HideField()
+  isActivated?: BoolFieldUpdateOperationsInput;
 }

@@ -11,34 +11,33 @@ import { UserRelationFilter } from '../user/user-relation-filter.input';
 
 @InputType()
 export class LicenseWhereInput {
+  @Field(() => [LicenseWhereInput], { nullable: true })
+  AND?: Array<LicenseWhereInput>;
 
-    @Field(() => [LicenseWhereInput], {nullable:true})
-    AND?: Array<LicenseWhereInput>;
+  @Field(() => [LicenseWhereInput], { nullable: true })
+  OR?: Array<LicenseWhereInput>;
 
-    @Field(() => [LicenseWhereInput], {nullable:true})
-    OR?: Array<LicenseWhereInput>;
+  @Field(() => [LicenseWhereInput], { nullable: true })
+  NOT?: Array<LicenseWhereInput>;
 
-    @Field(() => [LicenseWhereInput], {nullable:true})
-    NOT?: Array<LicenseWhereInput>;
+  @Field(() => IntFilter, { nullable: true })
+  id?: IntFilter;
 
-    @Field(() => IntFilter, {nullable:true})
-    id?: IntFilter;
+  @Field(() => EnumRoleFilter, { nullable: true })
+  role?: EnumRoleFilter;
 
-    @Field(() => EnumRoleFilter, {nullable:true})
-    role?: EnumRoleFilter;
+  @HideField()
+  licenseKey?: StringFilter;
 
-    @HideField()
-    licenseKey?: StringFilter;
+  @HideField()
+  createdAt?: DateTimeFilter;
 
-    @HideField()
-    createdAt?: DateTimeFilter;
+  @HideField()
+  expirationDate?: DateTimeNullableFilter;
 
-    @HideField()
-    expirationDate?: DateTimeNullableFilter;
+  @HideField()
+  isActivated?: BoolFilter;
 
-    @HideField()
-    isActivated?: BoolFilter;
-
-    @Field(() => UserRelationFilter, {nullable:true})
-    user?: UserRelationFilter;
+  @Field(() => UserRelationFilter, { nullable: true })
+  user?: UserRelationFilter;
 }

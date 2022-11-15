@@ -6,25 +6,24 @@ import { License } from '../license/license.model';
 
 @ObjectType()
 export class User {
+  @Field(() => ID, { nullable: false })
+  id!: number;
 
-    @Field(() => ID, {nullable:false})
-    id!: number;
+  @Field(() => String, { nullable: false })
+  userName!: string;
 
-    @Field(() => String, {nullable:false})
-    userName!: string;
+  @Field(() => String, { nullable: false })
+  discordId!: string;
 
-    @Field(() => String, {nullable:false})
-    discordId!: string;
+  @Field(() => String, { nullable: false })
+  discordAvatarId!: string;
 
-    @Field(() => String, {nullable:false})
-    discordAvatarId!: string;
+  @HideField()
+  createdAt!: Date;
 
-    @HideField()
-    createdAt!: Date;
+  @Field(() => String, { nullable: false })
+  licenseKey!: string;
 
-    @Field(() => String, {nullable:false})
-    licenseKey!: string;
-
-    @Field(() => License, {nullable:false})
-    license?: License;
+  @Field(() => License, { nullable: false })
+  license?: License;
 }

@@ -10,37 +10,36 @@ import { LicenseSumOrderByAggregateInput } from './license-sum-order-by-aggregat
 
 @InputType()
 export class LicenseOrderByWithAggregationInput {
+  @Field(() => SortOrder, { nullable: true })
+  id?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    id?: keyof typeof SortOrder;
+  @Field(() => SortOrder, { nullable: true })
+  role?: keyof typeof SortOrder;
 
-    @Field(() => SortOrder, {nullable:true})
-    role?: keyof typeof SortOrder;
+  @HideField()
+  licenseKey?: keyof typeof SortOrder;
 
-    @HideField()
-    licenseKey?: keyof typeof SortOrder;
+  @HideField()
+  createdAt?: keyof typeof SortOrder;
 
-    @HideField()
-    createdAt?: keyof typeof SortOrder;
+  @HideField()
+  expirationDate?: keyof typeof SortOrder;
 
-    @HideField()
-    expirationDate?: keyof typeof SortOrder;
+  @HideField()
+  isActivated?: keyof typeof SortOrder;
 
-    @HideField()
-    isActivated?: keyof typeof SortOrder;
+  @Field(() => LicenseCountOrderByAggregateInput, { nullable: true })
+  _count?: LicenseCountOrderByAggregateInput;
 
-    @Field(() => LicenseCountOrderByAggregateInput, {nullable:true})
-    _count?: LicenseCountOrderByAggregateInput;
+  @Field(() => LicenseAvgOrderByAggregateInput, { nullable: true })
+  _avg?: LicenseAvgOrderByAggregateInput;
 
-    @Field(() => LicenseAvgOrderByAggregateInput, {nullable:true})
-    _avg?: LicenseAvgOrderByAggregateInput;
+  @Field(() => LicenseMaxOrderByAggregateInput, { nullable: true })
+  _max?: LicenseMaxOrderByAggregateInput;
 
-    @Field(() => LicenseMaxOrderByAggregateInput, {nullable:true})
-    _max?: LicenseMaxOrderByAggregateInput;
+  @Field(() => LicenseMinOrderByAggregateInput, { nullable: true })
+  _min?: LicenseMinOrderByAggregateInput;
 
-    @Field(() => LicenseMinOrderByAggregateInput, {nullable:true})
-    _min?: LicenseMinOrderByAggregateInput;
-
-    @Field(() => LicenseSumOrderByAggregateInput, {nullable:true})
-    _sum?: LicenseSumOrderByAggregateInput;
+  @Field(() => LicenseSumOrderByAggregateInput, { nullable: true })
+  _sum?: LicenseSumOrderByAggregateInput;
 }

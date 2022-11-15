@@ -5,13 +5,12 @@ import { StringFieldUpdateOperationsInput } from '../prisma/string-field-update-
 
 @InputType()
 export class AdminUncheckedUpdateInput {
+  @Field(() => IntFieldUpdateOperationsInput, { nullable: true })
+  id?: IntFieldUpdateOperationsInput;
 
-    @Field(() => IntFieldUpdateOperationsInput, {nullable:true})
-    id?: IntFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  email?: StringFieldUpdateOperationsInput;
 
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    email?: StringFieldUpdateOperationsInput;
-
-    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
-    password?: StringFieldUpdateOperationsInput;
+  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  password?: StringFieldUpdateOperationsInput;
 }

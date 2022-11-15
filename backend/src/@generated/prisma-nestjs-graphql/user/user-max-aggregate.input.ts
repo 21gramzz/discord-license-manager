@@ -4,22 +4,21 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class UserMaxAggregateInput {
+  @Field(() => Boolean, { nullable: true })
+  id?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    id?: true;
+  @Field(() => Boolean, { nullable: true })
+  userName?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    userName?: true;
+  @Field(() => Boolean, { nullable: true })
+  discordId?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    discordId?: true;
+  @Field(() => Boolean, { nullable: true })
+  discordAvatarId?: true;
 
-    @Field(() => Boolean, {nullable:true})
-    discordAvatarId?: true;
+  @HideField()
+  createdAt?: true;
 
-    @HideField()
-    createdAt?: true;
-
-    @HideField()
-    licenseKey?: true;
+  @HideField()
+  licenseKey?: true;
 }

@@ -5,10 +5,9 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class LicenseWhereUniqueInput {
+  @Field(() => Int, { nullable: true })
+  id?: number;
 
-    @Field(() => Int, {nullable:true})
-    id?: number;
-
-    @HideField()
-    licenseKey?: string;
+  @HideField()
+  licenseKey?: string;
 }

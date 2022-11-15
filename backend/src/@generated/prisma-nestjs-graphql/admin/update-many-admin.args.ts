@@ -7,13 +7,12 @@ import { AdminWhereInput } from './admin-where.input';
 
 @ArgsType()
 export class UpdateManyAdminArgs {
+  @Field(() => AdminUpdateManyMutationInput, { nullable: false })
+  @Type(() => AdminUpdateManyMutationInput)
+  @ValidateNested()
+  data!: AdminUpdateManyMutationInput;
 
-    @Field(() => AdminUpdateManyMutationInput, {nullable:false})
-    @Type(() => AdminUpdateManyMutationInput)
-    @ValidateNested()
-    data!: AdminUpdateManyMutationInput;
-
-    @Field(() => AdminWhereInput, {nullable:true})
-    @Type(() => AdminWhereInput)
-    where?: AdminWhereInput;
+  @Field(() => AdminWhereInput, { nullable: true })
+  @Type(() => AdminWhereInput)
+  where?: AdminWhereInput;
 }

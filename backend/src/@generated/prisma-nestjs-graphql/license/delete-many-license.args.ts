@@ -5,8 +5,7 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteManyLicenseArgs {
-
-    @Field(() => LicenseWhereInput, {nullable:true})
-    @Type(() => LicenseWhereInput)
-    where?: LicenseWhereInput;
+  @Field(() => LicenseWhereInput, { nullable: true })
+  @Type(() => LicenseWhereInput)
+  where?: LicenseWhereInput;
 }
