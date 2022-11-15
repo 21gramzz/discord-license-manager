@@ -39,18 +39,6 @@ export class LicensesResolver {
   @UseGuards(JwtAuthGuard)
   async createLicense(@Args() args: CreateOneLicenseArgs) {
     args.data.licenseKey = randomstring.generate(64);
-    switch (args.data.role) {
-      case 'FAMILYANDFRIENDS':
-      case 'LIFETIME':
-        args.data.expirationDate = null;
-        break;
-      case 'RENEWAL': {
-        const date = new Date();
-        date.setFullYear(date.getFullYear() + 1);
-        args.data.expirationDate = date;
-        break;
-      }
-    }
     return this.licenseService.createLicense(args);
   }
 
@@ -59,29 +47,13 @@ export class LicensesResolver {
   async createManyLicense(@Args() args: CreateManyLicenseArgs) {
     const newData = [];
     const role: Role = Role[args.data.role];
-    let expirationDate: Date | null;
-
-    switch (args.data.role) {
-      case 'FAMILYANDFRIENDS':
-      case 'LIFETIME':
-        expirationDate = null;
-        break;
-      case 'RENEWAL': {
-        const date = new Date();
-        date.setFullYear(date.getFullYear() + 1);
-        expirationDate = date;
-        break;
-      }
-    }
 
     for (let i = 0; i < args.data.qty; i++) {
       newData.push({
         role,
-        expirationDate,
         licenseKey: randomstring.generate(64),
       });
     }
-
     return this.licenseService.createManyLicense({
       data: newData,
     });

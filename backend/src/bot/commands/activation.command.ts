@@ -38,9 +38,23 @@ export class ActivationCommand
 
         if (license) {
           if (!license.isActivated) {
+            let expirationDate: Date | null;
+            switch (license.role) {
+              case 'FAMILYANDFRIENDS':
+              case 'LIFETIME':
+                expirationDate = null;
+                break;
+              case 'RENEWAL': {
+                const date = new Date();
+                date.setFullYear(date.getFullYear() + 1);
+                expirationDate = date;
+                break;
+              }
+            }
             await this.licensesService.updateOneLicense({
               where: { licenseKey: dto.licensekey },
               data: {
+                expirationDate: { set: expirationDate },
                 isActivated: { set: true },
               },
             });
@@ -72,7 +86,11 @@ export class ActivationCommand
                 userName: interaction.user.username,
                 discordId: interaction.user.id,
                 discordAvatarId: interaction.user.avatar,
-                license: { connect: { licenseKey: license.licenseKey } },
+                license: {
+                  connect: {
+                    licenseKey: license.licenseKey,
+                  },
+                },
               },
             });
 
