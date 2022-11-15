@@ -8,6 +8,7 @@ import {
 import { CloseOutline } from '@styled-icons/evaicons-outline';
 import { SunFill, MoonFill } from '@styled-icons/bootstrap';
 import { Create } from '@styled-icons/ionicons-outline';
+import { Add } from '@styled-icons/fluentui-system-filled';
 
 export interface IconProps {
   size?: string;
@@ -22,7 +23,8 @@ export interface IconProps {
     | 'arrowRight'
     | 'close'
     | 'sun'
-    | 'moon';
+    | 'moon'
+    | 'add';
 }
 
 export const Icon: React.FC<IconProps> = ({
@@ -46,6 +48,8 @@ export const Icon: React.FC<IconProps> = ({
         return <Create size={size} />;
       case 'trash':
         return <Trash size={size} />;
+      case 'add':
+        return <Add size={size} />;
     }
   }, [size, variants]);
 
