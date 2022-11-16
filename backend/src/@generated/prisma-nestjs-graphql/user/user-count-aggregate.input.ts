@@ -19,7 +19,7 @@ export class UserCountAggregateInput {
   @HideField()
   createdAt?: true;
 
-  @HideField()
+  @Field(() => Boolean, { nullable: true })
   licenseKey?: true;
 
   @Field(() => Boolean, { nullable: true })

@@ -3,8 +3,8 @@ import { InputType } from '@nestjs/graphql';
 import { IntFilter } from '../prisma/int-filter.input';
 import { EnumRoleFilter } from '../prisma/enum-role-filter.input';
 import { StringFilter } from '../prisma/string-filter.input';
-import { HideField } from '@nestjs/graphql';
 import { DateTimeFilter } from '../prisma/date-time-filter.input';
+import { HideField } from '@nestjs/graphql';
 import { DateTimeNullableFilter } from '../prisma/date-time-nullable-filter.input';
 import { BoolFilter } from '../prisma/bool-filter.input';
 import { UserRelationFilter } from '../user/user-relation-filter.input';
@@ -26,7 +26,7 @@ export class LicenseWhereInput {
   @Field(() => EnumRoleFilter, { nullable: true })
   role?: EnumRoleFilter;
 
-  @HideField()
+  @Field(() => StringFilter, { nullable: true })
   licenseKey?: StringFilter;
 
   @HideField()

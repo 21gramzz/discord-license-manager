@@ -11,7 +11,7 @@ export class LicenseMinOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
   role?: keyof typeof SortOrder;
 
-  @HideField()
+  @Field(() => SortOrder, { nullable: true })
   licenseKey?: keyof typeof SortOrder;
 
   @HideField()

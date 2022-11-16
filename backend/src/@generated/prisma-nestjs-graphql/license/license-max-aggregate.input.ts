@@ -10,7 +10,7 @@ export class LicenseMaxAggregateInput {
   @Field(() => Boolean, { nullable: true })
   role?: true;
 
-  @HideField()
+  @Field(() => Boolean, { nullable: true })
   licenseKey?: true;
 
   @HideField()

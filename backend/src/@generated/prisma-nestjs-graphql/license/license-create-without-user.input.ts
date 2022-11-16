@@ -10,7 +10,7 @@ export class LicenseCreateWithoutUserInput {
   @Validator.IsNotEmpty()
   role!: keyof typeof Role;
 
-  @HideField()
+  @Field(() => String, { nullable: false })
   licenseKey!: string;
 
   @HideField()

@@ -36,7 +36,8 @@ type AffectedRows {
 }
 
 type CreateManyLicenseResponse {
-  count: Float!
+  role: Role!
+  licenseKeys: [String!]!
 }
 
 type Admin {
@@ -49,7 +50,14 @@ type LoginAdminResponse {
 }
 
 type Query {
-  licenses(where: LicenseWhereInput, orderBy: [LicenseOrderByWithRelationInput!], cursor: LicenseWhereUniqueInput, take: Int, skip: Int, distinct: [LicenseScalarFieldEnum!]): [License!]!
+  licenses(
+    where: LicenseWhereInput
+    orderBy: [LicenseOrderByWithRelationInput!]
+    cursor: LicenseWhereUniqueInput
+    take: Int
+    skip: Int
+    distinct: [LicenseScalarFieldEnum!]
+  ): [License!]!
   totalLicenses: Float!
   user: User!
   admin(where: AdminWhereUniqueInput!): Admin!
@@ -61,6 +69,7 @@ input LicenseWhereInput {
   NOT: [LicenseWhereInput!]
   id: IntFilter
   role: EnumRoleFilter
+  licenseKey: StringFilter
   user: UserRelationFilter
 }
 
@@ -100,22 +109,6 @@ input NestedEnumRoleFilter {
   not: NestedEnumRoleFilter
 }
 
-input UserRelationFilter {
-  is: UserWhereInput
-  isNot: UserWhereInput
-}
-
-input UserWhereInput {
-  AND: [UserWhereInput!]
-  OR: [UserWhereInput!]
-  NOT: [UserWhereInput!]
-  id: IntFilter
-  userName: StringFilter
-  discordId: StringFilter
-  discordAvatarId: StringFilter
-  license: LicenseRelationFilter
-}
-
 input StringFilter {
   equals: String
   in: [String!]
@@ -144,6 +137,23 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input UserRelationFilter {
+  is: UserWhereInput
+  isNot: UserWhereInput
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
+  id: IntFilter
+  userName: StringFilter
+  discordId: StringFilter
+  discordAvatarId: StringFilter
+  licenseKey: StringFilter
+  license: LicenseRelationFilter
+}
+
 input LicenseRelationFilter {
   is: LicenseWhereInput
   isNot: LicenseWhereInput
@@ -152,6 +162,7 @@ input LicenseRelationFilter {
 input LicenseOrderByWithRelationInput {
   id: SortOrder
   role: SortOrder
+  licenseKey: SortOrder
   user: UserOrderByWithRelationInput
 }
 
@@ -165,11 +176,13 @@ input UserOrderByWithRelationInput {
   userName: SortOrder
   discordId: SortOrder
   discordAvatarId: SortOrder
+  licenseKey: SortOrder
   license: LicenseOrderByWithRelationInput
 }
 
 input LicenseWhereUniqueInput {
   id: Int
+  licenseKey: String
 }
 
 enum LicenseScalarFieldEnum {
@@ -196,6 +209,7 @@ type Mutation {
 
 input LicenseCreateInput {
   role: Role!
+  licenseKey: String!
   user: UserCreateNestedOneWithoutLicenseInput
 }
 
@@ -218,11 +232,12 @@ input UserCreateOrConnectWithoutLicenseInput {
 
 input UserWhereUniqueInput {
   id: Int
+  licenseKey: String
 }
 
 input CreateManyLicenseInput {
   role: Role!
-  qty: Float!
+  qty: Int!
 }
 
 input LoginAdminInput {

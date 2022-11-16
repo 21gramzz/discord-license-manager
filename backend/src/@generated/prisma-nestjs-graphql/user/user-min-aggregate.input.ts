@@ -19,6 +19,6 @@ export class UserMinAggregateInput {
   @HideField()
   createdAt?: true;
 
-  @HideField()
+  @Field(() => Boolean, { nullable: true })
   licenseKey?: true;
 }
