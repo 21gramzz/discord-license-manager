@@ -4,9 +4,12 @@ import {
   Trash,
   ArrowLeftShort,
   ArrowRightShort,
+  SunFill,
+  MoonFill,
+  ExclamationCircleFill,
+  CheckCircleFill,
 } from '@styled-icons/bootstrap';
 import { CloseOutline } from '@styled-icons/evaicons-outline';
-import { SunFill, MoonFill } from '@styled-icons/bootstrap';
 import { Create } from '@styled-icons/ionicons-outline';
 import { Add } from '@styled-icons/fluentui-system-filled';
 
@@ -24,7 +27,9 @@ export interface IconProps {
     | 'close'
     | 'sun'
     | 'moon'
-    | 'add';
+    | 'add'
+    | 'checkCircle'
+    | 'exclamationCircle';
 }
 
 export const Icon: React.FC<IconProps> = ({
@@ -50,6 +55,10 @@ export const Icon: React.FC<IconProps> = ({
         return <Trash size={size} />;
       case 'add':
         return <Add size={size} />;
+      case 'checkCircle':
+        return <CheckCircleFill size={size} />;
+      case 'exclamationCircle':
+        return <ExclamationCircleFill size={size} />;
     }
   }, [size, variants]);
 
