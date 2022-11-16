@@ -9,7 +9,6 @@ import * as randomstring from 'randomstring';
 import { UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { CreateManyLicenseResponse } from './dto/create-many-license.response';
-import { CreateManyLicenseInput } from './dto/create-many-license.input';
 import { CreateManyLicenseArgs } from './dto/create-many-license.args';
 import { Role } from 'src/@generated/prisma-nestjs-graphql/prisma/role.enum';
 
@@ -47,15 +46,20 @@ export class LicensesResolver {
   async createManyLicense(@Args() args: CreateManyLicenseArgs) {
     const newData = [];
     const role: Role = Role[args.data.role];
+    const licenseKeys: string[] = [];
 
     for (let i = 0; i < args.data.qty; i++) {
+      const licenseKey = randomstring.generate(64);
+      licenseKeys.push(licenseKey);
       newData.push({
         role,
-        licenseKey: randomstring.generate(64),
+        licenseKey,
       });
     }
-    return this.licenseService.createManyLicense({
+    await this.licenseService.createManyLicense({
       data: newData,
     });
+
+    return { licenseKeys, role };
   }
 }

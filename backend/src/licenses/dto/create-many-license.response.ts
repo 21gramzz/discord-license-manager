@@ -1,7 +1,11 @@
 import { Field, ObjectType } from '@nestjs/graphql';
+import { Role } from 'src/@generated/prisma-nestjs-graphql/prisma/role.enum';
 
 @ObjectType()
 export class CreateManyLicenseResponse {
-  @Field()
-  count: number;
+  @Field(() => Role)
+  role!: keyof typeof Role;
+
+  @Field(() => [String])
+  licenseKeys!: string[];
 }
