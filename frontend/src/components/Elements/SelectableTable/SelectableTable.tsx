@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export interface ColumnDefinition<T> {
   field: keyof T;
   title: string;
-  handelClick?: (data: CellDefinition<T>) => void;
+  onClick?: (data: CellDefinition<T>) => void;
 }
 
 export interface CellDefinitionRequiredParameter {
@@ -150,7 +150,7 @@ export const SelectableTable = <T,>({
             {columns.map((col) => (
               <TableCell
                 key={`${row[col.field]}`}
-                onClick={() => col.handelClick && col.handelClick(row)}
+                onClick={() => col.onClick && col.onClick(row)}
               >{`${row[col.field]}`}</TableCell>
             ))}
           </TableRow>

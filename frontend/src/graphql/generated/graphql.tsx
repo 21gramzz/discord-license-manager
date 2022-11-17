@@ -39,13 +39,14 @@ export type AffectedRows = {
 };
 
 export type CreateManyLicenseInput = {
-  qty: Scalars['Float'];
+  qty: Scalars['Int'];
   role: Role;
 };
 
 export type CreateManyLicenseResponse = {
   __typename?: 'CreateManyLicenseResponse';
-  count: Scalars['Float'];
+  licenseKeys: Array<Scalars['String']>;
+  role: Role;
 };
 
 export type EnumRoleFilter = {
@@ -77,12 +78,14 @@ export type License = {
 };
 
 export type LicenseCreateInput = {
+  licenseKey: Scalars['String'];
   role: Role;
   user?: InputMaybe<UserCreateNestedOneWithoutLicenseInput>;
 };
 
 export type LicenseOrderByWithRelationInput = {
   id?: InputMaybe<SortOrder>;
+  licenseKey?: InputMaybe<SortOrder>;
   role?: InputMaybe<SortOrder>;
   user?: InputMaybe<UserOrderByWithRelationInput>;
 };
@@ -106,12 +109,14 @@ export type LicenseWhereInput = {
   NOT?: InputMaybe<Array<LicenseWhereInput>>;
   OR?: InputMaybe<Array<LicenseWhereInput>>;
   id?: InputMaybe<IntFilter>;
+  licenseKey?: InputMaybe<StringFilter>;
   role?: InputMaybe<EnumRoleFilter>;
   user?: InputMaybe<UserRelationFilter>;
 };
 
 export type LicenseWhereUniqueInput = {
   id?: InputMaybe<Scalars['Int']>;
+  licenseKey?: InputMaybe<Scalars['String']>;
 };
 
 export type LoginAdminInput = {
@@ -267,6 +272,7 @@ export type UserOrderByWithRelationInput = {
   discordId?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   license?: InputMaybe<LicenseOrderByWithRelationInput>;
+  licenseKey?: InputMaybe<SortOrder>;
   userName?: InputMaybe<SortOrder>;
 };
 
@@ -283,11 +289,13 @@ export type UserWhereInput = {
   discordId?: InputMaybe<StringFilter>;
   id?: InputMaybe<IntFilter>;
   license?: InputMaybe<LicenseRelationFilter>;
+  licenseKey?: InputMaybe<StringFilter>;
   userName?: InputMaybe<StringFilter>;
 };
 
 export type UserWhereUniqueInput = {
   id?: InputMaybe<Scalars['Int']>;
+  licenseKey?: InputMaybe<Scalars['String']>;
 };
 
 export type CreateManyLicenseMutationVariables = Exact<{
@@ -298,7 +306,8 @@ export type CreateManyLicenseMutation = {
   __typename?: 'Mutation';
   createManyLicense: {
     __typename?: 'CreateManyLicenseResponse';
-    count: number;
+    licenseKeys: Array<string>;
+    role: Role;
   };
 };
 
@@ -348,7 +357,8 @@ export type TotalLicensesQuery = {
 export const CreateManyLicenseDocument = gql`
   mutation CreateManyLicense($data: CreateManyLicenseInput!) {
     createManyLicense(data: $data) {
-      count
+      licenseKeys
+      role
     }
   }
 `;

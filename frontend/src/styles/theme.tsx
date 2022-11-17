@@ -40,7 +40,7 @@ export const lightTheme: Theme = {
   body: '#fafafa',
   surface: '#e8e8ed',
   background: '#f5f5f5',
-  border: '#000',
+  border: '#000000',
   accent: '#2196f3',
 };
 

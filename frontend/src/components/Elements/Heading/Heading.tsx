@@ -12,18 +12,18 @@ interface HeadingProps {
   padding?: string;
 }
 
-export const Heading1: React.FC<HeadingProps> = ({
+export const Heading: React.FC<HeadingProps> = ({
   variants,
   children,
   ...props
 }) => {
   switch (variants) {
     case 'h1':
-      return <StyledHeading1 {...props} />;
+      return <StyledHeading1 {...props}>{children}</StyledHeading1>;
     case 'h2':
-      return <StyledHeading2 {...props} />;
+      return <StyledHeading2 {...props}>{children}</StyledHeading2>;
     case 'h3':
-      return <StyledHeading3 {...props} />;
+      return <StyledHeading3 {...props}>{children}</StyledHeading3>;
   }
 };
 

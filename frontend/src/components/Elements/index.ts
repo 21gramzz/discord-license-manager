@@ -5,3 +5,4 @@ export * from './Pagination';
 export * from './SelectableTable';
 export * from './Heading';
 export * from './Label';
+export * from './Toast';

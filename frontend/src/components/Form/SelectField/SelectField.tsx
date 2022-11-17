@@ -177,7 +177,8 @@ export const SelectField: React.FC<Props> = ({
       value = selectedOptions.map((option) => option.value);
     }
     onChange(value);
-  }, [onChange, selectedOptions]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedOptions]);
 
   useEffect(() => {
     setSearchKeyword('');
@@ -270,7 +271,7 @@ const Container = styled.div<
   >
 >`
   width: ${({ width }) => width || 'auto'};
-  height: ${({ height }) => height || '4rem'};
+  height: ${({ height }) => height || '3.5rem'};
   margin: ${({ margin }) => margin || '0'};
   font-weight: ${({ fontWeight }) => fontWeight || '400'};
   font-size: ${({ fontSize }) => fontSize || '1.3rem'};

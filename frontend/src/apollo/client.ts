@@ -8,6 +8,7 @@ import { GraphQLError } from 'graphql';
 import { onError } from '@apollo/client/link/error';
 import { setContext } from '@apollo/client/link/context';
 import { apiErrorsVar } from './global-vars';
+import storage from '../utils/storage';
 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
   const errors: GraphQLError[] = [];
@@ -23,7 +24,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('token');
+  const token = storage.getToken();
   return {
     headers: {
       ...headers,
