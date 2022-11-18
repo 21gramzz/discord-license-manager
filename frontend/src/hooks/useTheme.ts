@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { DefaultTheme } from 'styled-components';
 import { darkTheme, lightTheme } from '../styles/theme';
 
-type ColorMode = 'dark' | 'light';
+export type ColorMode = 'dark' | 'light';
 
 export const useTheme = () => {
   const [mode, setMode] = useState<ColorMode>('dark');
