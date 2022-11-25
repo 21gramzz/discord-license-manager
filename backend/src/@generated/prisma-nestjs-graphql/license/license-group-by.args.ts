@@ -14,37 +14,38 @@ import { LicenseMaxAggregateInput } from './license-max-aggregate.input';
 
 @ArgsType()
 export class LicenseGroupByArgs {
-  @Field(() => LicenseWhereInput, { nullable: true })
-  @Type(() => LicenseWhereInput)
-  where?: LicenseWhereInput;
 
-  @Field(() => [LicenseOrderByWithAggregationInput], { nullable: true })
-  orderBy?: Array<LicenseOrderByWithAggregationInput>;
+    @Field(() => LicenseWhereInput, {nullable:true})
+    @Type(() => LicenseWhereInput)
+    where?: LicenseWhereInput;
 
-  @Field(() => [LicenseScalarFieldEnum], { nullable: false })
-  by!: Array<keyof typeof LicenseScalarFieldEnum>;
+    @Field(() => [LicenseOrderByWithAggregationInput], {nullable:true})
+    orderBy?: Array<LicenseOrderByWithAggregationInput>;
 
-  @Field(() => LicenseScalarWhereWithAggregatesInput, { nullable: true })
-  having?: LicenseScalarWhereWithAggregatesInput;
+    @Field(() => [LicenseScalarFieldEnum], {nullable:false})
+    by!: Array<keyof typeof LicenseScalarFieldEnum>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => LicenseScalarWhereWithAggregatesInput, {nullable:true})
+    having?: LicenseScalarWhereWithAggregatesInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => LicenseCountAggregateInput, { nullable: true })
-  _count?: LicenseCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => LicenseAvgAggregateInput, { nullable: true })
-  _avg?: LicenseAvgAggregateInput;
+    @Field(() => LicenseCountAggregateInput, {nullable:true})
+    _count?: LicenseCountAggregateInput;
 
-  @Field(() => LicenseSumAggregateInput, { nullable: true })
-  _sum?: LicenseSumAggregateInput;
+    @Field(() => LicenseAvgAggregateInput, {nullable:true})
+    _avg?: LicenseAvgAggregateInput;
 
-  @Field(() => LicenseMinAggregateInput, { nullable: true })
-  _min?: LicenseMinAggregateInput;
+    @Field(() => LicenseSumAggregateInput, {nullable:true})
+    _sum?: LicenseSumAggregateInput;
 
-  @Field(() => LicenseMaxAggregateInput, { nullable: true })
-  _max?: LicenseMaxAggregateInput;
+    @Field(() => LicenseMinAggregateInput, {nullable:true})
+    _min?: LicenseMinAggregateInput;
+
+    @Field(() => LicenseMaxAggregateInput, {nullable:true})
+    _max?: LicenseMaxAggregateInput;
 }

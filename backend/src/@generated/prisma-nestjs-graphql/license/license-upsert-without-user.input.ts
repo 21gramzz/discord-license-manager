@@ -6,11 +6,12 @@ import { LicenseCreateWithoutUserInput } from './license-create-without-user.inp
 
 @InputType()
 export class LicenseUpsertWithoutUserInput {
-  @Field(() => LicenseUpdateWithoutUserInput, { nullable: false })
-  @Type(() => LicenseUpdateWithoutUserInput)
-  update!: LicenseUpdateWithoutUserInput;
 
-  @Field(() => LicenseCreateWithoutUserInput, { nullable: false })
-  @Type(() => LicenseCreateWithoutUserInput)
-  create!: LicenseCreateWithoutUserInput;
+    @Field(() => LicenseUpdateWithoutUserInput, {nullable:false})
+    @Type(() => LicenseUpdateWithoutUserInput)
+    update!: LicenseUpdateWithoutUserInput;
+
+    @Field(() => LicenseCreateWithoutUserInput, {nullable:false})
+    @Type(() => LicenseCreateWithoutUserInput)
+    create!: LicenseCreateWithoutUserInput;
 }

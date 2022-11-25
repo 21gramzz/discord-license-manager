@@ -13,34 +13,35 @@ import { LicenseMaxAggregateInput } from './license-max-aggregate.input';
 
 @ArgsType()
 export class LicenseAggregateArgs {
-  @Field(() => LicenseWhereInput, { nullable: true })
-  @Type(() => LicenseWhereInput)
-  where?: LicenseWhereInput;
 
-  @Field(() => [LicenseOrderByWithRelationInput], { nullable: true })
-  orderBy?: Array<LicenseOrderByWithRelationInput>;
+    @Field(() => LicenseWhereInput, {nullable:true})
+    @Type(() => LicenseWhereInput)
+    where?: LicenseWhereInput;
 
-  @Field(() => LicenseWhereUniqueInput, { nullable: true })
-  cursor?: LicenseWhereUniqueInput;
+    @Field(() => [LicenseOrderByWithRelationInput], {nullable:true})
+    orderBy?: Array<LicenseOrderByWithRelationInput>;
 
-  @Field(() => Int, { nullable: true })
-  take?: number;
+    @Field(() => LicenseWhereUniqueInput, {nullable:true})
+    cursor?: LicenseWhereUniqueInput;
 
-  @Field(() => Int, { nullable: true })
-  skip?: number;
+    @Field(() => Int, {nullable:true})
+    take?: number;
 
-  @Field(() => LicenseCountAggregateInput, { nullable: true })
-  _count?: LicenseCountAggregateInput;
+    @Field(() => Int, {nullable:true})
+    skip?: number;
 
-  @Field(() => LicenseAvgAggregateInput, { nullable: true })
-  _avg?: LicenseAvgAggregateInput;
+    @Field(() => LicenseCountAggregateInput, {nullable:true})
+    _count?: LicenseCountAggregateInput;
 
-  @Field(() => LicenseSumAggregateInput, { nullable: true })
-  _sum?: LicenseSumAggregateInput;
+    @Field(() => LicenseAvgAggregateInput, {nullable:true})
+    _avg?: LicenseAvgAggregateInput;
 
-  @Field(() => LicenseMinAggregateInput, { nullable: true })
-  _min?: LicenseMinAggregateInput;
+    @Field(() => LicenseSumAggregateInput, {nullable:true})
+    _sum?: LicenseSumAggregateInput;
 
-  @Field(() => LicenseMaxAggregateInput, { nullable: true })
-  _max?: LicenseMaxAggregateInput;
+    @Field(() => LicenseMinAggregateInput, {nullable:true})
+    _min?: LicenseMinAggregateInput;
+
+    @Field(() => LicenseMaxAggregateInput, {nullable:true})
+    _max?: LicenseMaxAggregateInput;
 }

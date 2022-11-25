@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class DeleteOneAdminArgs {
-  @Field(() => AdminWhereUniqueInput, { nullable: false })
-  @Type(() => AdminWhereUniqueInput)
-  where!: AdminWhereUniqueInput;
+
+    @Field(() => AdminWhereUniqueInput, {nullable:false})
+    @Type(() => AdminWhereUniqueInput)
+    where!: AdminWhereUniqueInput;
 }

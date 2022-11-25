@@ -3,9 +3,10 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class SessionWhereUniqueInput {
-  @Field(() => String, { nullable: true })
-  id?: string;
 
-  @Field(() => String, { nullable: true })
-  sid?: string;
+    @Field(() => String, {nullable:true})
+    id?: string;
+
+    @Field(() => String, {nullable:true})
+    sid?: string;
 }

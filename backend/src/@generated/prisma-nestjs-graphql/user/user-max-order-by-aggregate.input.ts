@@ -5,21 +5,22 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class UserMaxOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  userName?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  discordId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    userName?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  discordAvatarId?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    discordId?: keyof typeof SortOrder;
 
-  @HideField()
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    discordAvatarId?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  licenseKey?: keyof typeof SortOrder;
+    @HideField()
+    createdAt?: keyof typeof SortOrder;
+
+    @Field(() => SortOrder, {nullable:true})
+    licenseKey?: keyof typeof SortOrder;
 }

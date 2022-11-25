@@ -6,15 +6,16 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class UserUpdateManyMutationInput {
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  userName?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  discordId?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    userName?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
-  discordAvatarId?: StringFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    discordId?: StringFieldUpdateOperationsInput;
 
-  @HideField()
-  createdAt?: DateTimeFieldUpdateOperationsInput;
+    @Field(() => StringFieldUpdateOperationsInput, {nullable:true})
+    discordAvatarId?: StringFieldUpdateOperationsInput;
+
+    @HideField()
+    createdAt?: DateTimeFieldUpdateOperationsInput;
 }

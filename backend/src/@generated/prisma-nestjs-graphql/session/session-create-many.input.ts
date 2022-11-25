@@ -3,15 +3,16 @@ import { InputType } from '@nestjs/graphql';
 
 @InputType()
 export class SessionCreateManyInput {
-  @Field(() => String, { nullable: false })
-  id!: string;
 
-  @Field(() => String, { nullable: false })
-  sid!: string;
+    @Field(() => String, {nullable:false})
+    id!: string;
 
-  @Field(() => String, { nullable: false })
-  data!: string;
+    @Field(() => String, {nullable:false})
+    sid!: string;
 
-  @Field(() => Date, { nullable: false })
-  expiresAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    data!: string;
+
+    @Field(() => Date, {nullable:false})
+    expiresAt!: Date | string;
 }

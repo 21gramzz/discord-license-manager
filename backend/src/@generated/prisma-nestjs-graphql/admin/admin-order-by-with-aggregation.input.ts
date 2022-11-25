@@ -9,27 +9,28 @@ import { AdminSumOrderByAggregateInput } from './admin-sum-order-by-aggregate.in
 
 @InputType()
 export class AdminOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  email?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  password?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    email?: keyof typeof SortOrder;
 
-  @Field(() => AdminCountOrderByAggregateInput, { nullable: true })
-  _count?: AdminCountOrderByAggregateInput;
+    @Field(() => SortOrder, {nullable:true})
+    password?: keyof typeof SortOrder;
 
-  @Field(() => AdminAvgOrderByAggregateInput, { nullable: true })
-  _avg?: AdminAvgOrderByAggregateInput;
+    @Field(() => AdminCountOrderByAggregateInput, {nullable:true})
+    _count?: AdminCountOrderByAggregateInput;
 
-  @Field(() => AdminMaxOrderByAggregateInput, { nullable: true })
-  _max?: AdminMaxOrderByAggregateInput;
+    @Field(() => AdminAvgOrderByAggregateInput, {nullable:true})
+    _avg?: AdminAvgOrderByAggregateInput;
 
-  @Field(() => AdminMinOrderByAggregateInput, { nullable: true })
-  _min?: AdminMinOrderByAggregateInput;
+    @Field(() => AdminMaxOrderByAggregateInput, {nullable:true})
+    _max?: AdminMaxOrderByAggregateInput;
 
-  @Field(() => AdminSumOrderByAggregateInput, { nullable: true })
-  _sum?: AdminSumOrderByAggregateInput;
+    @Field(() => AdminMinOrderByAggregateInput, {nullable:true})
+    _min?: AdminMinOrderByAggregateInput;
+
+    @Field(() => AdminSumOrderByAggregateInput, {nullable:true})
+    _sum?: AdminSumOrderByAggregateInput;
 }

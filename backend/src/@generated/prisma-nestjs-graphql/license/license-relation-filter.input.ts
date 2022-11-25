@@ -4,9 +4,10 @@ import { LicenseWhereInput } from './license-where.input';
 
 @InputType()
 export class LicenseRelationFilter {
-  @Field(() => LicenseWhereInput, { nullable: true })
-  is?: LicenseWhereInput;
 
-  @Field(() => LicenseWhereInput, { nullable: true })
-  isNot?: LicenseWhereInput;
+    @Field(() => LicenseWhereInput, {nullable:true})
+    is?: LicenseWhereInput;
+
+    @Field(() => LicenseWhereInput, {nullable:true})
+    isNot?: LicenseWhereInput;
 }

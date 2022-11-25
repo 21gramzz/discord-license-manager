@@ -10,27 +10,28 @@ import { AdminMaxAggregate } from './admin-max-aggregate.output';
 
 @ObjectType()
 export class AdminGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => String, { nullable: false })
-  email!: string;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @HideField()
-  password!: string;
+    @Field(() => String, {nullable:false})
+    email!: string;
 
-  @Field(() => AdminCountAggregate, { nullable: true })
-  _count?: AdminCountAggregate;
+    @HideField()
+    password!: string;
 
-  @Field(() => AdminAvgAggregate, { nullable: true })
-  _avg?: AdminAvgAggregate;
+    @Field(() => AdminCountAggregate, {nullable:true})
+    _count?: AdminCountAggregate;
 
-  @Field(() => AdminSumAggregate, { nullable: true })
-  _sum?: AdminSumAggregate;
+    @Field(() => AdminAvgAggregate, {nullable:true})
+    _avg?: AdminAvgAggregate;
 
-  @Field(() => AdminMinAggregate, { nullable: true })
-  _min?: AdminMinAggregate;
+    @Field(() => AdminSumAggregate, {nullable:true})
+    _sum?: AdminSumAggregate;
 
-  @Field(() => AdminMaxAggregate, { nullable: true })
-  _max?: AdminMaxAggregate;
+    @Field(() => AdminMinAggregate, {nullable:true})
+    _min?: AdminMinAggregate;
+
+    @Field(() => AdminMaxAggregate, {nullable:true})
+    _max?: AdminMaxAggregate;
 }

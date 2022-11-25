@@ -10,30 +10,31 @@ import { BoolWithAggregatesFilter } from '../prisma/bool-with-aggregates-filter.
 
 @InputType()
 export class LicenseScalarWhereWithAggregatesInput {
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<LicenseScalarWhereWithAggregatesInput>;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => [LicenseScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [LicenseScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<LicenseScalarWhereWithAggregatesInput>;
 
-  @Field(() => EnumRoleWithAggregatesFilter, { nullable: true })
-  role?: EnumRoleWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  licenseKey?: StringWithAggregatesFilter;
+    @Field(() => EnumRoleWithAggregatesFilter, {nullable:true})
+    role?: EnumRoleWithAggregatesFilter;
 
-  @Field(() => DateTimeWithAggregatesFilter, { nullable: true })
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    licenseKey?: StringWithAggregatesFilter;
 
-  @HideField()
-  expirationDate?: DateTimeNullableWithAggregatesFilter;
+    @Field(() => DateTimeWithAggregatesFilter, {nullable:true})
+    createdAt?: DateTimeWithAggregatesFilter;
 
-  @HideField()
-  isActivated?: BoolWithAggregatesFilter;
+    @HideField()
+    expirationDate?: DateTimeNullableWithAggregatesFilter;
+
+    @HideField()
+    isActivated?: BoolWithAggregatesFilter;
 }

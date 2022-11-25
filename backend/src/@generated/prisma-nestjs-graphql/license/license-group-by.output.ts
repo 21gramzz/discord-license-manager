@@ -11,36 +11,37 @@ import { LicenseMaxAggregate } from './license-max-aggregate.output';
 
 @ObjectType()
 export class LicenseGroupBy {
-  @Field(() => Int, { nullable: false })
-  id!: number;
 
-  @Field(() => Role, { nullable: false })
-  role!: keyof typeof Role;
+    @Field(() => Int, {nullable:false})
+    id!: number;
 
-  @Field(() => String, { nullable: false })
-  licenseKey!: string;
+    @Field(() => Role, {nullable:false})
+    role!: keyof typeof Role;
 
-  @HideField()
-  createdAt!: Date | string;
+    @Field(() => String, {nullable:false})
+    licenseKey!: string;
 
-  @Field(() => Date, { nullable: true })
-  expirationDate?: Date | string;
+    @HideField()
+    createdAt!: Date | string;
 
-  @Field(() => Boolean, { nullable: false })
-  isActivated!: boolean;
+    @Field(() => Date, {nullable:true})
+    expirationDate?: Date | string;
 
-  @Field(() => LicenseCountAggregate, { nullable: true })
-  _count?: LicenseCountAggregate;
+    @Field(() => Boolean, {nullable:false})
+    isActivated!: boolean;
 
-  @Field(() => LicenseAvgAggregate, { nullable: true })
-  _avg?: LicenseAvgAggregate;
+    @Field(() => LicenseCountAggregate, {nullable:true})
+    _count?: LicenseCountAggregate;
 
-  @Field(() => LicenseSumAggregate, { nullable: true })
-  _sum?: LicenseSumAggregate;
+    @Field(() => LicenseAvgAggregate, {nullable:true})
+    _avg?: LicenseAvgAggregate;
 
-  @Field(() => LicenseMinAggregate, { nullable: true })
-  _min?: LicenseMinAggregate;
+    @Field(() => LicenseSumAggregate, {nullable:true})
+    _sum?: LicenseSumAggregate;
 
-  @Field(() => LicenseMaxAggregate, { nullable: true })
-  _max?: LicenseMaxAggregate;
+    @Field(() => LicenseMinAggregate, {nullable:true})
+    _min?: LicenseMinAggregate;
+
+    @Field(() => LicenseMaxAggregate, {nullable:true})
+    _max?: LicenseMaxAggregate;
 }

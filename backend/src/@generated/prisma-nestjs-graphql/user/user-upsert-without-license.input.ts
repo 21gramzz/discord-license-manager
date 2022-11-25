@@ -6,11 +6,12 @@ import { UserCreateWithoutLicenseInput } from './user-create-without-license.inp
 
 @InputType()
 export class UserUpsertWithoutLicenseInput {
-  @Field(() => UserUpdateWithoutLicenseInput, { nullable: false })
-  @Type(() => UserUpdateWithoutLicenseInput)
-  update!: UserUpdateWithoutLicenseInput;
 
-  @Field(() => UserCreateWithoutLicenseInput, { nullable: false })
-  @Type(() => UserCreateWithoutLicenseInput)
-  create!: UserCreateWithoutLicenseInput;
+    @Field(() => UserUpdateWithoutLicenseInput, {nullable:false})
+    @Type(() => UserUpdateWithoutLicenseInput)
+    update!: UserUpdateWithoutLicenseInput;
+
+    @Field(() => UserCreateWithoutLicenseInput, {nullable:false})
+    @Type(() => UserCreateWithoutLicenseInput)
+    create!: UserCreateWithoutLicenseInput;
 }

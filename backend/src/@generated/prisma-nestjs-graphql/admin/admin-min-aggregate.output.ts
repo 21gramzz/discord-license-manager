@@ -5,12 +5,13 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class AdminMinAggregate {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => String, { nullable: true })
-  email?: string;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @HideField()
-  password?: string;
+    @Field(() => String, {nullable:true})
+    email?: string;
+
+    @HideField()
+    password?: string;
 }

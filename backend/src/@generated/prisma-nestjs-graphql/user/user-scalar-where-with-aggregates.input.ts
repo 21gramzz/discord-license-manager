@@ -7,30 +7,31 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class UserScalarWhereWithAggregatesInput {
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  AND?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  OR?: Array<UserScalarWhereWithAggregatesInput>;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    AND?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => [UserScalarWhereWithAggregatesInput], { nullable: true })
-  NOT?: Array<UserScalarWhereWithAggregatesInput>;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    OR?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => IntWithAggregatesFilter, { nullable: true })
-  id?: IntWithAggregatesFilter;
+    @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
+    NOT?: Array<UserScalarWhereWithAggregatesInput>;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  userName?: StringWithAggregatesFilter;
+    @Field(() => IntWithAggregatesFilter, {nullable:true})
+    id?: IntWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  discordId?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    userName?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  discordAvatarId?: StringWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    discordId?: StringWithAggregatesFilter;
 
-  @HideField()
-  createdAt?: DateTimeWithAggregatesFilter;
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    discordAvatarId?: StringWithAggregatesFilter;
 
-  @Field(() => StringWithAggregatesFilter, { nullable: true })
-  licenseKey?: StringWithAggregatesFilter;
+    @HideField()
+    createdAt?: DateTimeWithAggregatesFilter;
+
+    @Field(() => StringWithAggregatesFilter, {nullable:true})
+    licenseKey?: StringWithAggregatesFilter;
 }

@@ -6,19 +6,20 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class LicenseCreateWithoutUserInput {
-  @Field(() => Role, { nullable: false })
-  @Validator.IsNotEmpty()
-  role!: keyof typeof Role;
 
-  @Field(() => String, { nullable: false })
-  licenseKey!: string;
+    @Field(() => Role, {nullable:false})
+    @Validator.IsNotEmpty()
+    role!: keyof typeof Role;
 
-  @Field(() => Date, { nullable: true })
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:false})
+    licenseKey!: string;
 
-  @HideField()
-  expirationDate?: Date | string;
+    @Field(() => Date, {nullable:true})
+    createdAt?: Date | string;
 
-  @HideField()
-  isActivated?: boolean;
+    @HideField()
+    expirationDate?: Date | string;
+
+    @HideField()
+    isActivated?: boolean;
 }

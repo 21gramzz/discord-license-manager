@@ -9,23 +9,24 @@ import { LicenseUpdateWithoutUserInput } from './license-update-without-user.inp
 
 @InputType()
 export class LicenseUpdateOneRequiredWithoutUserNestedInput {
-  @Field(() => LicenseCreateWithoutUserInput, { nullable: true })
-  @Type(() => LicenseCreateWithoutUserInput)
-  create?: LicenseCreateWithoutUserInput;
 
-  @Field(() => LicenseCreateOrConnectWithoutUserInput, { nullable: true })
-  @Type(() => LicenseCreateOrConnectWithoutUserInput)
-  connectOrCreate?: LicenseCreateOrConnectWithoutUserInput;
+    @Field(() => LicenseCreateWithoutUserInput, {nullable:true})
+    @Type(() => LicenseCreateWithoutUserInput)
+    create?: LicenseCreateWithoutUserInput;
 
-  @Field(() => LicenseUpsertWithoutUserInput, { nullable: true })
-  @Type(() => LicenseUpsertWithoutUserInput)
-  upsert?: LicenseUpsertWithoutUserInput;
+    @Field(() => LicenseCreateOrConnectWithoutUserInput, {nullable:true})
+    @Type(() => LicenseCreateOrConnectWithoutUserInput)
+    connectOrCreate?: LicenseCreateOrConnectWithoutUserInput;
 
-  @Field(() => LicenseWhereUniqueInput, { nullable: true })
-  @Type(() => LicenseWhereUniqueInput)
-  connect?: LicenseWhereUniqueInput;
+    @Field(() => LicenseUpsertWithoutUserInput, {nullable:true})
+    @Type(() => LicenseUpsertWithoutUserInput)
+    upsert?: LicenseUpsertWithoutUserInput;
 
-  @Field(() => LicenseUpdateWithoutUserInput, { nullable: true })
-  @Type(() => LicenseUpdateWithoutUserInput)
-  update?: LicenseUpdateWithoutUserInput;
+    @Field(() => LicenseWhereUniqueInput, {nullable:true})
+    @Type(() => LicenseWhereUniqueInput)
+    connect?: LicenseWhereUniqueInput;
+
+    @Field(() => LicenseUpdateWithoutUserInput, {nullable:true})
+    @Type(() => LicenseUpdateWithoutUserInput)
+    update?: LicenseUpdateWithoutUserInput;
 }

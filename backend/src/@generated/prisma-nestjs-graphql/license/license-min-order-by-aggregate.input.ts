@@ -5,21 +5,22 @@ import { HideField } from '@nestjs/graphql';
 
 @InputType()
 export class LicenseMinOrderByAggregateInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  licenseKey?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    role?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    licenseKey?: keyof typeof SortOrder;
 
-  @HideField()
-  expirationDate?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @HideField()
-  isActivated?: keyof typeof SortOrder;
+    @HideField()
+    expirationDate?: keyof typeof SortOrder;
+
+    @HideField()
+    isActivated?: keyof typeof SortOrder;
 }

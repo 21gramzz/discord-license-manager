@@ -10,36 +10,37 @@ import { LicenseSumOrderByAggregateInput } from './license-sum-order-by-aggregat
 
 @InputType()
 export class LicenseOrderByWithAggregationInput {
-  @Field(() => SortOrder, { nullable: true })
-  id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  role?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    id?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  licenseKey?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    role?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
-  createdAt?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    licenseKey?: keyof typeof SortOrder;
 
-  @HideField()
-  expirationDate?: keyof typeof SortOrder;
+    @Field(() => SortOrder, {nullable:true})
+    createdAt?: keyof typeof SortOrder;
 
-  @HideField()
-  isActivated?: keyof typeof SortOrder;
+    @HideField()
+    expirationDate?: keyof typeof SortOrder;
 
-  @Field(() => LicenseCountOrderByAggregateInput, { nullable: true })
-  _count?: LicenseCountOrderByAggregateInput;
+    @HideField()
+    isActivated?: keyof typeof SortOrder;
 
-  @Field(() => LicenseAvgOrderByAggregateInput, { nullable: true })
-  _avg?: LicenseAvgOrderByAggregateInput;
+    @Field(() => LicenseCountOrderByAggregateInput, {nullable:true})
+    _count?: LicenseCountOrderByAggregateInput;
 
-  @Field(() => LicenseMaxOrderByAggregateInput, { nullable: true })
-  _max?: LicenseMaxOrderByAggregateInput;
+    @Field(() => LicenseAvgOrderByAggregateInput, {nullable:true})
+    _avg?: LicenseAvgOrderByAggregateInput;
 
-  @Field(() => LicenseMinOrderByAggregateInput, { nullable: true })
-  _min?: LicenseMinOrderByAggregateInput;
+    @Field(() => LicenseMaxOrderByAggregateInput, {nullable:true})
+    _max?: LicenseMaxOrderByAggregateInput;
 
-  @Field(() => LicenseSumOrderByAggregateInput, { nullable: true })
-  _sum?: LicenseSumOrderByAggregateInput;
+    @Field(() => LicenseMinOrderByAggregateInput, {nullable:true})
+    _min?: LicenseMinOrderByAggregateInput;
+
+    @Field(() => LicenseSumOrderByAggregateInput, {nullable:true})
+    _sum?: LicenseSumOrderByAggregateInput;
 }

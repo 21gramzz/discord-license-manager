@@ -5,7 +5,8 @@ import { Type } from 'class-transformer';
 
 @ArgsType()
 export class FindUniqueAdminArgs {
-  @Field(() => AdminWhereUniqueInput, { nullable: false })
-  @Type(() => AdminWhereUniqueInput)
-  where!: AdminWhereUniqueInput;
+
+    @Field(() => AdminWhereUniqueInput, {nullable:false})
+    @Type(() => AdminWhereUniqueInput)
+    where!: AdminWhereUniqueInput;
 }

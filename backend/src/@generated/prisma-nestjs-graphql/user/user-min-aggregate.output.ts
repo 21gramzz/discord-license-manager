@@ -5,21 +5,22 @@ import { HideField } from '@nestjs/graphql';
 
 @ObjectType()
 export class UserMinAggregate {
-  @Field(() => Int, { nullable: true })
-  id?: number;
 
-  @Field(() => String, { nullable: true })
-  userName?: string;
+    @Field(() => Int, {nullable:true})
+    id?: number;
 
-  @Field(() => String, { nullable: true })
-  discordId?: string;
+    @Field(() => String, {nullable:true})
+    userName?: string;
 
-  @Field(() => String, { nullable: true })
-  discordAvatarId?: string;
+    @Field(() => String, {nullable:true})
+    discordId?: string;
 
-  @HideField()
-  createdAt?: Date | string;
+    @Field(() => String, {nullable:true})
+    discordAvatarId?: string;
 
-  @Field(() => String, { nullable: true })
-  licenseKey?: string;
+    @HideField()
+    createdAt?: Date | string;
+
+    @Field(() => String, {nullable:true})
+    licenseKey?: string;
 }
