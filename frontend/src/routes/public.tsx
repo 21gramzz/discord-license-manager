@@ -1,4 +1,9 @@
-import { AuthRoutes } from '../features/auth';
+import namedLazyImport from '../utils/named-lazy-Import';
+
+const { AuthRoutes } = namedLazyImport(
+  () => import('../features/auth'),
+  'AuthRoutes',
+);
 
 export const publicRoutes = [
   {

@@ -1,14 +1,19 @@
-import { Licenses } from '../features/licenses';
 import { Outlet } from 'react-router-dom';
-import { Suspense } from 'react';
+import React from 'react';
 import { MainLayout } from '../components/Layout';
+import namedLazyImport from '../utils/named-lazy-Import';
+
+const { Licenses } = namedLazyImport(
+  () => import('../features/licenses'),
+  'Licenses',
+);
 
 const App = () => {
   return (
     <MainLayout>
-      <Suspense fallback={<div>Loading...</div>}>
+      <React.Suspense fallback={<div>Loading...</div>}>
         <Outlet />
-      </Suspense>
+      </React.Suspense>
     </MainLayout>
   );
 };
