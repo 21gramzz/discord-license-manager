@@ -63,7 +63,6 @@ export const CreateLicenseModal: React.FC<CreateLicenseModalProps> = ({
           <GridColumn gridTemplateColumns="2fr 1fr">
             <div>
               <Label margin="0 0 1.5rem 0">Role</Label>
-
               <Controller
                 name="role"
                 rules={{ required: true }}
@@ -89,8 +88,8 @@ export const CreateLicenseModal: React.FC<CreateLicenseModalProps> = ({
               <InputField
                 width="100%"
                 type="number"
-                min="1"
-                max="50"
+                min={1}
+                max={10}
                 defaultValue={1}
                 name="count"
                 className={errors.count ? 'is-invalid' : ''}

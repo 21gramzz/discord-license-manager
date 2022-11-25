@@ -4,8 +4,6 @@ import { useForm } from 'react-hook-form';
 import {
   useLoginAdminMutation,
   LoginAdminInput,
-  useCreateManyLicenseMutation,
-  useDeleteManyLicenseMutation,
 } from '../../../graphql/generated/graphql';
 import { InputField } from '../../../components/Form';
 import { InputFieldErrorText } from '../../../components/Form';
@@ -27,8 +25,6 @@ interface FormData {
 export const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const { register, handleSubmit, errors, reset } = useForm<FormData>();
 
-  const [createManyLicense] = useCreateManyLicenseMutation();
-  const [deleteManyLicense] = useDeleteManyLicenseMutation();
   const [login, { error }] = useLoginAdminMutation();
 
   const loginAdmin = useCallback(

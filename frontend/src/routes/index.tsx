@@ -23,10 +23,12 @@ export const AppRoutes = () => {
     }
   }, [apiErrors, navigate]);
 
-  const baseRoutes = [{ path: '/', element: <Licenses /> }];
+  let baseRoutes = [{ path: '/', element: <Licenses /> }, ...publicRoutes];
 
-  const routes = storage.getToken() ? protectedRoutes : publicRoutes;
+  if (storage.getToken()) {
+    baseRoutes = [...baseRoutes, ...protectedRoutes];
+  }
 
-  const element = useRoutes([...baseRoutes, ...routes]);
+  const element = useRoutes(baseRoutes);
   return <>{element}</>;
 };

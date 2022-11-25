@@ -1,10 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import { Button } from '../../../components/Elements';
 import { Pagination } from '../../../components/Elements';
@@ -30,17 +24,25 @@ import { CreateLicenseModal } from './CreateLicenseModal';
 export const LicensesTable: React.FC = () => {
   const { openModal, closeModal } = useModal();
   const { setToast } = useToast();
-  const copyToClipboard = useCallback((data: License) => {
-    // TODO Toast
-    navigator.clipboard.writeText(data.licenseKey);
-  }, []);
+
+  const copyToClipboard = useCallback(
+    (data: License) => {
+      setToast({
+        description: 'License key copied to clipboard',
+        title: 'Success',
+        type: 'success',
+      });
+      navigator.clipboard.writeText(data.licenseKey);
+    },
+    [setToast],
+  );
 
   const columns: ColumnDefinition<License>[] = useMemo(() => {
     return [
       {
         field: 'licenseKey',
         title: 'License Key',
-        handelClick: copyToClipboard,
+        onClick: copyToClipboard,
       },
       {
         field: 'role',
@@ -183,7 +185,7 @@ export const LicensesTable: React.FC = () => {
 
         return;
       } catch (err) {
-        // console.log(err);
+        console.log(err);
       }
       setToast({
         type: 'danger',

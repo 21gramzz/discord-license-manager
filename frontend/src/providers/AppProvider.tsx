@@ -14,11 +14,11 @@ export interface AppProviderProps {
 }
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mode } = useTheme();
 
   return (
     <ApolloProvider client={client}>
-      <ToggleThemeProvider toggleTheme={toggleTheme}>
+      <ToggleThemeProvider toggleTheme={toggleTheme} theme={theme} mode={mode}>
         <ThemeProvider theme={theme}>
           <ToastProvider>
             <ModalProvider>

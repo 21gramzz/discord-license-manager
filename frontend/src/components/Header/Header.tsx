@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
 };
 
 const StyledHeader = styled.header`
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({ theme }) => theme.body};
   border-bottom: ${({ theme }) => `solid 0.5px ${theme.border}`};
   display: flex;
   align-items: center;

@@ -295,7 +295,7 @@ const DropdownContainer = styled.div<{
   width: 100%;
   border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.body};
-  border: solid 0.1rem ${({ theme }) => theme.border};
+  border: ${({ theme }) => 'solid 0.5px ' + theme.border};
   max-height: ${({ windowHeight }) => `calc(${windowHeight} - 7rem)`};
   display: flex;
   flex-direction: column;
@@ -374,7 +374,7 @@ const InputField = styled.input`
   width: 100%;
   padding: 1rem 1.5rem;
   border: 0;
-  border-bottom: solid 0.1rem ${({ theme }) => theme.border};
+  border-bottom: ${({ theme }) => 'solid 0.5px ' + theme.border};
   outline: 0;
   ::placeholder {
     color: ${({ theme }) => theme.subText};

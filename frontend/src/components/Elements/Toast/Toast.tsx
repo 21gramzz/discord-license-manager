@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Icon } from '../Icon';
-import { CloseOutline } from '@styled-icons/evaicons-outline';
-import {
-  CheckCircleFill,
-  ExclamationCircleFill,
-} from '@styled-icons/bootstrap';
 
 export interface ToastOptions {
   id?: string;
@@ -65,13 +60,19 @@ const Toast: React.FC<ToastProps> = ({
         <Icon
           variants={type === 'success' ? 'checkCircle' : 'exclamationCircle'}
           size="2.2rem"
+          color="white"
         />
         <Body>
           <Title>{title}</Title>
           <Description>{description}</Description>
         </Body>
       </Inner>
-      <Icon variants="close" size="2rem" onClick={() => closeToast(id)} />
+      <Icon
+        variants="close"
+        size="2rem"
+        color="white"
+        onClick={() => closeToast(id)}
+      />
     </StyledToast>
   );
 };

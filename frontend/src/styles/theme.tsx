@@ -26,7 +26,7 @@ export const darkTheme: Theme = {
   ...sharedColors,
   text: '#fafafa',
   subText: '#9b9b9b',
-  body: '#001e3c',
+  body: '#051E37',
   surface: '#304567',
   background: '#0a1929',
   border: '#bebebe',

@@ -189,6 +189,9 @@ const Table = styled.table<StyledTableProps>`
 
 const TableRow = styled.tr`
   display: contents;
+  &:last-child td {
+    border: 0;
+  }
 `;
 
 const TableHead = styled.th<{
