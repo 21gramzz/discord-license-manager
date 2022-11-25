@@ -28,7 +28,7 @@ model License {
   /// @Validator.IsNotEmpty()
   role           Role
   licenseKey     String    @unique @db.VarChar(64)
-  /// @HideField({ input: true, output: true })
+  /// @HideField({ input: false, output: true })
   createdAt      DateTime  @default(now())
   /// @HideField({ input: true, output: false })
   /// @Validator.IsDate()

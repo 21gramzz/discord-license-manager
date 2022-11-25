@@ -14,7 +14,7 @@ export class LicenseMaxOrderByAggregateInput {
   @Field(() => SortOrder, { nullable: true })
   licenseKey?: keyof typeof SortOrder;
 
-  @HideField()
+  @Field(() => SortOrder, { nullable: true })
   createdAt?: keyof typeof SortOrder;
 
   @HideField()

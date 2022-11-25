@@ -70,6 +70,7 @@ input LicenseWhereInput {
   id: IntFilter
   role: EnumRoleFilter
   licenseKey: StringFilter
+  createdAt: DateTimeFilter
   user: UserRelationFilter
 }
 
@@ -137,6 +138,28 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
+input NestedDateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: NestedDateTimeFilter
+}
+
 input UserRelationFilter {
   is: UserWhereInput
   isNot: UserWhereInput
@@ -163,6 +186,7 @@ input LicenseOrderByWithRelationInput {
   id: SortOrder
   role: SortOrder
   licenseKey: SortOrder
+  createdAt: SortOrder
   user: UserOrderByWithRelationInput
 }
 
@@ -210,6 +234,7 @@ type Mutation {
 input LicenseCreateInput {
   role: Role!
   licenseKey: String!
+  createdAt: DateTime
   user: UserCreateNestedOneWithoutLicenseInput
 }
 

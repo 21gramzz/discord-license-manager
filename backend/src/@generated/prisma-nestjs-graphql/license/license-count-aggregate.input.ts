@@ -13,7 +13,7 @@ export class LicenseCountAggregateInput {
   @Field(() => Boolean, { nullable: true })
   licenseKey?: true;
 
-  @HideField()
+  @Field(() => Boolean, { nullable: true })
   createdAt?: true;
 
   @HideField()

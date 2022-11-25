@@ -1,5 +1,5 @@
 query Licenses($skip: Int!, $take: Int!) {
-  licenses(skip: $skip, take: $take) {
+  licenses(skip: $skip, take: $take, orderBy: { createdAt: asc }) {
     id
     licenseKey
     expirationDate

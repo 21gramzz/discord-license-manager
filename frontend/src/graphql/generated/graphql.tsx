@@ -49,6 +49,17 @@ export type CreateManyLicenseResponse = {
   role: Role;
 };
 
+export type DateTimeFilter = {
+  equals?: InputMaybe<Scalars['DateTime']>;
+  gt?: InputMaybe<Scalars['DateTime']>;
+  gte?: InputMaybe<Scalars['DateTime']>;
+  in?: InputMaybe<Array<Scalars['DateTime']>>;
+  lt?: InputMaybe<Scalars['DateTime']>;
+  lte?: InputMaybe<Scalars['DateTime']>;
+  not?: InputMaybe<NestedDateTimeFilter>;
+  notIn?: InputMaybe<Array<Scalars['DateTime']>>;
+};
+
 export type EnumRoleFilter = {
   equals?: InputMaybe<Role>;
   in?: InputMaybe<Array<Role>>;
@@ -78,12 +89,14 @@ export type License = {
 };
 
 export type LicenseCreateInput = {
+  createdAt?: InputMaybe<Scalars['DateTime']>;
   licenseKey: Scalars['String'];
   role: Role;
   user?: InputMaybe<UserCreateNestedOneWithoutLicenseInput>;
 };
 
 export type LicenseOrderByWithRelationInput = {
+  createdAt?: InputMaybe<SortOrder>;
   id?: InputMaybe<SortOrder>;
   licenseKey?: InputMaybe<SortOrder>;
   role?: InputMaybe<SortOrder>;
@@ -108,6 +121,7 @@ export type LicenseWhereInput = {
   AND?: InputMaybe<Array<LicenseWhereInput>>;
   NOT?: InputMaybe<Array<LicenseWhereInput>>;
   OR?: InputMaybe<Array<LicenseWhereInput>>;
+  createdAt?: InputMaybe<DateTimeFilter>;
   id?: InputMaybe<IntFilter>;
   licenseKey?: InputMaybe<StringFilter>;
   role?: InputMaybe<EnumRoleFilter>;
@@ -160,6 +174,17 @@ export type MutationLoginAdminArgs = {
 
 export type MutationLoginUserArgs = {
   loginUserInput: LoginUserInput;
+};
+
+export type NestedDateTimeFilter = {
+  equals?: InputMaybe<Scalars['DateTime']>;
+  gt?: InputMaybe<Scalars['DateTime']>;
+  gte?: InputMaybe<Scalars['DateTime']>;
+  in?: InputMaybe<Array<Scalars['DateTime']>>;
+  lt?: InputMaybe<Scalars['DateTime']>;
+  lte?: InputMaybe<Scalars['DateTime']>;
+  not?: InputMaybe<NestedDateTimeFilter>;
+  notIn?: InputMaybe<Array<Scalars['DateTime']>>;
 };
 
 export type NestedEnumRoleFilter = {
@@ -457,7 +482,7 @@ export type DeleteManyLicenseMutationOptions = Apollo.BaseMutationOptions<
 >;
 export const LicensesDocument = gql`
   query Licenses($skip: Int!, $take: Int!) {
-    licenses(skip: $skip, take: $take) {
+    licenses(skip: $skip, take: $take, orderBy: { createdAt: asc }) {
       id
       licenseKey
       expirationDate

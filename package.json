@@ -29,6 +29,9 @@
       "fmt"
     ]
   },
+  "resolutions": {
+    "graphql": "^16.6.0"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

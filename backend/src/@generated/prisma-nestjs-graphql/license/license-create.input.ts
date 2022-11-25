@@ -14,7 +14,7 @@ export class LicenseCreateInput {
   @Field(() => String, { nullable: false })
   licenseKey!: string;
 
-  @HideField()
+  @Field(() => Date, { nullable: true })
   createdAt?: Date | string;
 
   @HideField()
