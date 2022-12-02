@@ -12,7 +12,7 @@ export class UsersResolver {
   @UseGuards(AuthenticatedGuard)
   async user(@Context() context) {
     const user = await this.usersService.findUniqueUser({
-      where: { licenseKey: context.req.session.user },
+      where: { id: context.req.user.id },
     });
 
     if (!user) {

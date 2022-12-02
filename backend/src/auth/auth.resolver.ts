@@ -26,8 +26,9 @@ export class AuthResolver {
     @Args('loginUserInput') loginUserInput: LoginUserInput,
     @Context() context,
   ) {
-    const user = await this.authService.loginUser(context.user);
-    context.req.session.user = user.licenseKey;
-    return user;
+    // const user = await this.authService.loginUser(context.user);
+    // context.req.session.user = user;
+    return context.req.user;
+    // return user;
   }
 }

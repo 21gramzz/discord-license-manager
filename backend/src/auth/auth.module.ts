@@ -4,12 +4,11 @@ import { AdminsModule } from '../admins/admins.module';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { AuthResolver } from './auth.resolver';
-import {
-  JwtLocalStrategy,
-  SessionLocalStrategy,
-} from 'src/auth/strategies/local.strategy';
+import { JwtLocalStrategy } from 'src/auth/strategies/jwt-local.strategy';
+import { SessionLocalStrategy } from './strategies/session-local.strategy';
 import { JwtStrategy } from 'src/auth/strategies/jwt.strategy';
 import { UsersModule } from 'src/users/users.module';
+import { AuthSerializer } from './serialization.provider';
 
 @Module({
   imports: [
@@ -27,6 +26,7 @@ import { UsersModule } from 'src/users/users.module';
     JwtLocalStrategy,
     JwtStrategy,
     SessionLocalStrategy,
+    AuthSerializer,
   ],
 })
 export class AuthModule {}

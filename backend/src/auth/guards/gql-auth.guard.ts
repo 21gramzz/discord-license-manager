@@ -14,9 +14,17 @@ export class GqlJwtAuthGuard extends AuthGuard('jwt-local') {
 
 @Injectable()
 export class GqlSessionAuthGuard extends AuthGuard('session-local') {
-  getRequest(context: ExecutionContext): any {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
     const ctx = GqlExecutionContext.create(context);
-    const request = ctx.getContext();
+    const request = ctx.getContext().req;
+    const result = (await super.canActivate(context)) as boolean;
+    await super.logIn(request);
+    return result;
+  }
+
+  getRequest(context: ExecutionContext) {
+    const ctx = GqlExecutionContext.create(context);
+    const request = ctx.getContext().req;
     request.body = ctx.getArgs().loginUserInput;
     return request;
   }

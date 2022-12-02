@@ -35,21 +35,21 @@ export class AuthService {
     };
   }
 
-  async validateUser(licenseKey: string): Promise<User | null> {
-    const user = await this.usersService.findUniqueUser({
-      where: { licenseKey },
+  async validateUser(user: LoginUserInput): Promise<User | null> {
+    const foundUser = await this.usersService.findUniqueUser({
+      where: { licenseKey: user.licenseKey },
     });
 
-    if (user) {
-      return user;
+    if (foundUser) {
+      return foundUser;
     }
 
     return null;
   }
 
-  async loginUser(args: LoginUserInput): Promise<User> {
+  async loginUser(user: User): Promise<User> {
     return this.usersService.findUniqueUser({
-      where: { licenseKey: args.licenseKey },
+      where: { licenseKey: user.licenseKey },
     });
   }
 }

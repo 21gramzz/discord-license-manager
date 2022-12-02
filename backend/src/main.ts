@@ -4,6 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 import * as expressSession from 'express-session';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 import { PrismaClient } from '@prisma/client';
+import * as passport from 'passport';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -21,6 +22,8 @@ async function bootstrap() {
         dbRecordIdFunction: undefined,
       }),
     }),
+    passport.initialize(),
+    passport.session(),
   );
 
   app.useGlobalPipes(new ValidationPipe());
