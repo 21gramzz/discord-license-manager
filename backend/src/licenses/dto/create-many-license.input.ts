@@ -1,6 +1,6 @@
 import { Field } from '@nestjs/graphql';
 import { InputType } from '@nestjs/graphql';
-import { Role } from 'src/@generated/prisma-nestjs-graphql/prisma/role.enum';
+import { Role } from '../../@generated/prisma-nestjs-graphql/prisma/role.enum';
 import * as Validator from 'class-validator';
 import { Int } from '@nestjs/graphql';
 

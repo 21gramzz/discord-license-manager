@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { FindUniqueLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/find-unique-license.args';
-import { PrismaService } from 'src/prisma.service';
-import { License } from 'src/@generated/prisma-nestjs-graphql/license/license.model';
-import { FindManyLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/find-many-license.args';
-import { CreateOneLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/create-one-license.args';
-import { UpdateOneLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/update-one-license.args';
-import { CreateManyLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/create-many-license.args';
-import { DeleteManyLicenseArgs } from 'src/@generated/prisma-nestjs-graphql/license/delete-many-license.args';
-import { AffectedRows } from 'src/@generated/prisma-nestjs-graphql/prisma/affected-rows.output';
+import { FindUniqueLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/find-unique-license.args';
+import { PrismaService } from '../prisma.service';
+import { License } from '../@generated/prisma-nestjs-graphql/license/license.model';
+import { FindManyLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/find-many-license.args';
+import { CreateOneLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/create-one-license.args';
+import { UpdateOneLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/update-one-license.args';
+import { CreateManyLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/create-many-license.args';
+import { DeleteManyLicenseArgs } from '../@generated/prisma-nestjs-graphql/license/delete-many-license.args';
+import { AffectedRows } from '../@generated/prisma-nestjs-graphql/prisma/affected-rows.output';
 
 @Injectable()
 export class LicensesService {

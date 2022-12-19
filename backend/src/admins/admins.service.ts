@@ -7,7 +7,7 @@ import { FindUniqueAdminArgs } from 'src/@generated/prisma-nestjs-graphql/admin/
 export class AdminsService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async findUniqueAdmin(args: FindUniqueAdminArgs): Promise<Admin | null> {
+  async findUniqueAdmin(args: FindUniqueAdminArgs): Promise<Admin> {
     return this.prisma.admin.findUnique(args);
   }
 }

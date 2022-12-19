@@ -11,7 +11,6 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 import { CreateManyLicenseResponse } from './dto/create-many-license.response';
 import { CreateManyLicenseArgs } from './dto/create-many-license.args';
 import { Role } from 'src/@generated/prisma-nestjs-graphql/prisma/role.enum';
-
 @Resolver()
 export class LicensesResolver {
   constructor(private readonly licenseService: LicensesService) {}
