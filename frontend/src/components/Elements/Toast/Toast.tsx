@@ -88,7 +88,7 @@ export const Toaster: React.FC<ToasterProps> = ({ toastData, closeToast }) => {
 };
 
 const Container = styled.div`
-  z-index: 1000;
+  z-index: 1;
   box-sizing: border-box;
   position: fixed;
   top: 10px;
