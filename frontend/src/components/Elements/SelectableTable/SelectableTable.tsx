@@ -185,6 +185,10 @@ const Table = styled.table<StyledTableProps>`
   overflow: scroll;
   grid-template-columns: ${({ gridTemplateColumns }) => gridTemplateColumns};
   border: ${({ theme }) => `solid 0.5px ${theme.border}`};
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const TableRow = styled.tr`

@@ -16,14 +16,6 @@ exports[`Storyshots Elements/Button Primary 1`] = `
 </button>
 `;
 
-exports[`Storyshots Elements/Modal Demo 1`] = `
-<button
-  onClick={[Function]}
->
-  Open Modal
-</button>
-`;
-
 exports[`Storyshots Elements/Pagination Demo 1`] = `
 <div
   className="sc-gKXOVf ihELLc"
@@ -158,17 +150,17 @@ exports[`Storyshots Elements/Pagination Demo 1`] = `
 
 exports[`Storyshots Elements/SelectableTable Demo 1`] = `
 <table
-  className="sc-iqcoie fHYoBJ"
+  className="sc-iqcoie mCRLu"
   width=""
 >
   <thead
     className="sc-ksZaOG jIDUkP"
   >
     <tr
-      className="sc-crXcEl gRNtLf"
+      className="sc-crXcEl cgyQWj"
     >
       <th
-        className="sc-evZas jXzvIe"
+        className="sc-evZas jLxYNV"
       >
         <input
           checked={false}
@@ -177,7 +169,7 @@ exports[`Storyshots Elements/SelectableTable Demo 1`] = `
         />
       </th>
       <th
-        className="sc-evZas bSXcPJ"
+        className="sc-evZas bcxiyW"
       >
         <div>
           First Name
@@ -189,7 +181,7 @@ exports[`Storyshots Elements/SelectableTable Demo 1`] = `
         />
       </th>
       <th
-        className="sc-evZas bSXcPJ"
+        className="sc-evZas bcxiyW"
       >
         <div>
           Last Name
@@ -201,10 +193,10 @@ exports[`Storyshots Elements/SelectableTable Demo 1`] = `
     className="sc-hAZoDl jddhlc"
   >
     <tr
-      className="sc-crXcEl gRNtLf"
+      className="sc-crXcEl cgyQWj"
     >
       <td
-        className="sc-breuTD dIXDdg"
+        className="sc-breuTD kuYOSf"
         width="50px"
       >
         <input
@@ -214,23 +206,23 @@ exports[`Storyshots Elements/SelectableTable Demo 1`] = `
         />
       </td>
       <td
-        className="sc-breuTD bFCTEr"
+        className="sc-breuTD eVrWdI"
         onClick={[Function]}
       >
         John
       </td>
       <td
-        className="sc-breuTD bFCTEr"
+        className="sc-breuTD eVrWdI"
         onClick={[Function]}
       >
         Lennon
       </td>
     </tr>
     <tr
-      className="sc-crXcEl gRNtLf"
+      className="sc-crXcEl cgyQWj"
     >
       <td
-        className="sc-breuTD dIXDdg"
+        className="sc-breuTD kuYOSf"
         width="50px"
       >
         <input
@@ -240,13 +232,13 @@ exports[`Storyshots Elements/SelectableTable Demo 1`] = `
         />
       </td>
       <td
-        className="sc-breuTD bFCTEr"
+        className="sc-breuTD eVrWdI"
         onClick={[Function]}
       >
         Sean
       </td>
       <td
-        className="sc-breuTD bFCTEr"
+        className="sc-breuTD eVrWdI"
         onClick={[Function]}
       >
         Lennon
@@ -272,7 +264,7 @@ exports[`Storyshots Form/InputField Error 1`] = `
 
 exports[`Storyshots Form/SelectField Default 1`] = `
 <div
-  className="sc-fEOsli kdcOeH"
+  className="sc-fEOsli iBLSxb"
   width="30rem"
 >
   <div
@@ -288,7 +280,7 @@ exports[`Storyshots Form/SelectField Default 1`] = `
 
 exports[`Storyshots Form/SelectField Error 1`] = `
 <div
-  className="sc-fEOsli kdcOeH is-invalid"
+  className="sc-fEOsli iBLSxb is-invalid"
   width="30rem"
 >
   <div
@@ -332,7 +324,7 @@ exports[`Storyshots Form/SelectField Error 1`] = `
 
 exports[`Storyshots Form/SelectField Multiple Select 1`] = `
 <div
-  className="sc-fEOsli kdcOeH"
+  className="sc-fEOsli iBLSxb"
   width="30rem"
 >
   <div
